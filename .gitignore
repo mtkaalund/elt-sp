@@ -4,6 +4,9 @@
 *.aux
 *.log
 *.toc
+*.fls
+*.synctex
+*.synctex(busy)
 
 # PDF output - usually a bad idea to keep this in Git
 *.pdf
