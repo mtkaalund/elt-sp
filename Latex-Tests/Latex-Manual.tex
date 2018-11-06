@@ -4,8 +4,25 @@
     \usepackage{graphicx}
     \usepackage[danish]{babel}
     \usepackage{hyperref}
+    \usepackage{listings}
+    \usepackage{color}
 
     %\fontfamily{lmr}\selectfont 
+
+    \lstdefinestyle{customLateX} {
+        belowcaptionskip=1\baselineskip,
+        breaklines=true,
+        frame=c,
+        xleftmargin=\parindent,
+        language=TeX,
+        showstringspaces=false,
+        basicstyle=\footnotesize\ttfamily,
+        keywordstyle=\bfseries\color{green!40!black},
+        commentstyle=\itshape\color{purple!40!black},
+        identifierstyle=\color{blue},
+        stringstyle=\color{orange},
+    }
+    \lstset{style=customLateX}
 
     \title{En lille hurtig \LaTeX{} note}
     
@@ -24,6 +41,12 @@
     \tableofcontents
 
     \chapter{fonts}
+    En metode til, at ændre skriftypen er at bruge 
+    \begin{lstlisting}[language=TeX]
+        \usefont{T1}{pbk}{c}{n}
+    \end{lstlisting}
+
+
     \input{fonts/cmr}
     \input{fonts/lmr}
     \input{fonts/lmdh}
