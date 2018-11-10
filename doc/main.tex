@@ -17,64 +17,6 @@
     \usepackage{lastpage}
     \usepackage{fancyhdr}
 
-    \fancypagestyle{landscapestyle}{
-        \fancyhf{} %Clears the header/footer
-        \fancyhead[LE,RO]{
-            \makebox[\textwidth][r]{
-%                \rlap{
-%                    \hspace{.75cm}
-%                    \smash{
-                        \rotatebox{90}{
-                            Et kig på IBI i privaten
-                        }
-%                    }
-%                }
-            }
-        }
-        \fancyhead[RE,LO]{
-            \makebox[\textwidth][r]{
-%                \rlap{
-%                    \hspace{.75cm}
-%                    \smash{
-                        \rotatebox{90}{
-                            \rightmark
-                        }
-%                    }
-%                }
-            }
-        }
-
-        \fancyfoot[LE,RO]{
-            \makebox[\textwidth][r]{
-                \rlap{
-                    \hspace{.75cm}
-                    \smash{
-                        \rotatebox{90}{
-                            Side \thepage \hspace{1pt} af \pageref{LastPage}
-                        }
-                    }
-                }
-            }
-        }
-
-        \fancyfoot[CE,CO]{% Footer
-            \makebox[\textwidth][r]{% Right
-                \rlap{
-                    \hspace{.75cm}% Push out of margin by \footskip
-                    \smash{% Remove vertical height
-                        \raisebox{4.87in}{% Raise vertically
-                            \rotatebox{90}{
-                                Michael Torp Kaalund, Hold: elsp4d18
-                            }
-                        }
-                    }
-                }
-            }   
-        }
-        \renewcommand{\headrulewidth}{0pt}% No header rule
-        \renewcommand{\footrulewidth}{0pt}% No footer rule
-    }
-
     \pagestyle{fancy} 
     \fancyhf{}
     \fancyhead[LE,RO]{Et kig på IBI i privaten}
@@ -104,7 +46,8 @@
 
     \newpage
 
-    \section{Problemformulering}
+    %\section{Problemformulering}
+    \input{problemformulering.tex}
 
     \section{Problemafgrænsning}
 
