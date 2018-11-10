@@ -1,5 +1,8 @@
 # Taken from : https://gist.github.com/misberner/8316891
 
+# LibreOffice temperary files
+.~lock.*.ods#
+
 # LaTeX temporary files
 *.aux
 *.log
