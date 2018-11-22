@@ -1,0 +1,30 @@
+/*
+ * 
+ *
+ *
+ */
+digraph vand
+{
+   n1 [ label="Start" ]
+   n2 [ label="Initialize" ]
+   n3 [ label="Read Waterlevel in plantbox" ]
+   n4 [ label="Read Waterlevel in waterresiovar" ]
+   n5 [ label="if waterlevel in waterresiovare" ]
+   n6 [ label="else alternative watersupply" ]
+   n7 [ label="Compare niveau" ]
+   n8 [ label="Start pumpe" ]
+   n9 [ label="Stop pumpe" ]
+   n10 [ label="End" ]
+
+   n1 -> n2
+   n2 -> n3
+   n3 -> n4
+   n4 -> n5
+   n4 -> n6
+
+   n5 -> n7
+   n6 -> n7
+   n7 -> n8
+   n8 -> n9
+   n9 -> n10
+}
