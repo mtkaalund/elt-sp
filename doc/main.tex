@@ -1,6 +1,6 @@
 \documentclass[12pt,a4paper,twoside]{article}
     \special{papersize=210mm,297mm}
-    %\usepackage{fullpage}
+    
     \usepackage[a4paper,includeheadfoot,margin=2.54cm]{geometry}
     \usepackage{pdflscape}
     \usepackage{hyperref}
@@ -16,9 +16,6 @@
 
     \usepackage{lastpage}
     \usepackage{fancyhdr}
-    \usepackage{mdwlist}
-
-    %%\newcounter{saveenum}
 
     \pagestyle{fancy} 
     \fancyhf{}
@@ -28,9 +25,7 @@
     \fancyfoot[LE,RO]{Side \thepage \hspace{1pt} af \pageref{LastPage}}
     \renewcommand{\headrulewidth}{1.5pt}
     \renewcommand{\footrulewidth}{1.5pt}
-        
-    %\usepackage{showframe}
- 
+         
     \title{Et kig på IBI i privaten}
     
     \author{Michael Torp Kaalund \thanks{Mange tak til min læreplads Intego A/S}}
@@ -44,16 +39,10 @@
 %    \end{abstract}
 
 %    \newpage
-
     \tableofcontents
 
     \newpage
-
-    \input{res/projektbeskrivelse/projektbeskrivelse.tex}
-    %\section{Problemformulering}
-    %\input{problemformulering.tex}
-
-    %\section{Problemafgrænsning}
+    \input{res/projektbeskrivelse/projektbeskrivelse.tex}   
 
     \section{Implementering}
         \input{implementering/drivhus/drivhus.tex}
