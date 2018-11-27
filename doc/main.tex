@@ -16,6 +16,10 @@
 
     \usepackage{lastpage}
     \usepackage{fancyhdr}
+    \usepackage{xcolor}
+    \usepackage{mathtools}
+
+    \newcommand{\todo}[1]{\textcolor{red}{TODO: #1}\PackageWarning{TODO:}{#1!}}
 
     \pagestyle{fancy} 
     \fancyhf{}
@@ -47,6 +51,7 @@
     \section{Implementering}
         \input{implementering/drivhus/drivhus.tex}
         \input{implementering/lysinstallationen/lysinstallationen.tex}
+        \input{implementering/Ventilation/ventilation.tex}
 
 %    \section{Perspetivering}
 
@@ -56,7 +61,8 @@
 
     \input{appendix/materialeliste/bom.tex}
     \input{appendix/siemens/logo.tex}
-    \input{appendix/home-assistant/home.tex}
+    \input{appendix/ventilation/ventilation.tex}
+    %\input{appendix/home-assistant/home.tex}
     %% Program list
     \input{appendix/programmer.tex}
     %% Litteratur listen
