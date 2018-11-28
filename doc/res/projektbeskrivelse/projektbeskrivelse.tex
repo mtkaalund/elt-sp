@@ -1,87 +1,80 @@
 \section{Projektbeskrivelse}
-\textbf{Dato:} \today \\
-\textbf{Navn:} Michael Torp Kaalund\\
-\textbf{Valg af moduler i uddannelsen:}
-\begin{itemize}
-    \item Modul 1.3 Automatiske anlæg i bygninger
-    \item Modul 1.4 Intelligente bygningsinstallationer (centrale) og design af enkle brugerflader
-    \item Modul 1.6 Design og styring af lys
-    \item Modul 2.2 Styring og regulering af automatiske anlæg
-\end{itemize}
-\textbf{Moduler, der indgår i svendeprøven:}
-\begin{itemize}
-    \item Modul 1.3 Automatiske anlæg i bygninger
-    \item Modul 1.4 Intelligente bygningsinstallationer (centrale) og design af enkle brugerflader
-    \item Modul 2.2 Styring og regulering af automatiske anlæg
-\end{itemize}
-\textbf{Klasse:} elsp4d18
 
-\begin{enumerate}
-    \item \textbf{Angiv hvem der har ansvar for hvilke områder af projektet, hvis der arbejdes i en
-    gruppe:}\\ Da jeg har valgt, at arbejde alene. Så det fulde ansvar er hos mig.
-    \item \textbf{Problemstilling og formål med projektet:} \\ 
-    Kunden ønsker at få et automatiseret drivhus styring. Som
-    automatisk fylder vand i planteboksene fra hans regnvandsopsamling.
-    Styringen skal kunne holde et konstant niveau i plantekasserne. \\
-    Kunden får lavet en lysinstallation med IHC. 
-    %Kunden har et ønske om, at få en lysstyring som både kan styre den IHC og
-    %IKEA Trådfri / Philips HUE. 
-    \\
-    Kunden ønsker også, at ventilationsanlægget, skal kunne komme ind over styringen.
-    Hvordan kan det være muligt, at lave kommunkation som kan over flere flader?
-    % (f.eks IHC, IKEA Trådfri, ventilationsanlægget osv.)\newcounter{enumi_saved}
+\begin{tabular}{|l|p{9cm}|}
+    \hline
+    \multicolumn{2}{|p{\textwidth}|}{\textbf{Dato:}  \today} \\
+    \hline
+    \textbf{Navn:} Michael Torp Kaalund & \textbf{Valg af moduler i uddannelsen:} \\
+       & \tabitem Modul 1.3 Automatiske anlæg i bygninger \\
+       & \tabitem Modul 1.4 Intelligente bygningsinstallationer (centrale) og design af enkle brugerflader \\
+       & \tabitem Modul 1.6 Design og styring af lys \\
+       & \tabitem Modul 2.2 Styring og regulering af automatiske anlæg      \\
+    \hline
+    \multicolumn{2}{|p{\textwidth}|}{ \textbf{Moduler, der indgår i svendeprøven: }} \\
+    \multicolumn{2}{|p{\textwidth}|}{ \tabitem Modul 1.3 Automatiske anlæg i bygninger } \\
+    \multicolumn{2}{|p{\textwidth}|}{ \tabitem Modul 1.4 Intelligente bygningsinstallationer (centrale) og design af enkle brugerflader } \\
+    \multicolumn{2}{|p{\textwidth}|}{ \tabitem Modul 2.2 Styring og regulering af automatiske anlæg} \\
+    \hline
+    \multicolumn{2}{|p{\textwidth}|}{\textbf{Klasse:} elsp4d18} \\
+    \hline
+    \multicolumn{2}{|p{\textwidth}|}{\textbf{1. Angiv hvem der har ansvar for hvilke områder af projektet, hvis der arbejdes i en
+    gruppe:}} \\
+    \multicolumn{2}{|p{\textwidth}|}{Da jeg har valgt, at arbejde alene. Så det fulde ansvar er hos mig.} \\
+    \hline
+    \multicolumn{2}{|p{\textwidth}|}{\textbf{2. Problemstilling og formål med projektet:}} \\
+    \multicolumn{2}{|p{\textwidth}|}{Kunden ønsker at få et automatiseret drivhus styring. Som automatisk fylder
+    vand i planteboksene fra hans regnvandsopsamling. Styringen skal kunne
+    holde et konstant niveau i plantekasserne.
+    Kunden får lavet en lysinstallation med IHC.
+    Kunden ønsker også, at befugtningsanlæg, skal kunne komme ind over
+    styringen. Hvordan er det muligt, at få befugtningsanlægget ind over IHC styringen?} \\
+    \hline
 
-    \item \textbf{Indhold af projektet, herunder mulige tekniske løsningsmodeller} \\ 
-    Med den tid som er tilrådighed ville det blive presset hvis der skulle laves og dokumenteres installationen og programmingerne af et helt hus, samt design af drivhus styringen. 
-    Drivhus styring ville der blive lagt vægt på samt hvordan en intelligent bygningsinstallation kunne programmeres op.
-    Det innovative del af projektet er automatisering af drivhuset i en privat bolig. Selv om der har fået et fremryk de seneste par år, med en smart lysstyring i bolig, så er det langt fra alle løsninger som er optimale i forhold til hvordan brugeren udnytter dette. 
-    \\
-    Vandstyringen til drivhusstyringen
-    \begin{itemize}
-        \item Siemens LOGO! 12/24RCE
-        \item Siemens LOGO! Power 24V 2,5A
-        \item Akvarie Pumpe
-        \item 2 stk Vandniveau måler med 0 - 10V udgang, eller et potentiometer ( $5k\Omega$) og en serie modstand ($6,6k\Omega$) \footnote{Side 42 \cite{logo_sm} }
-        \item Tavle med din skinne eller montage boks med din skinne.
-        \item $3g1,5mm^2$ tilledning
-        \item 3pol stikprop
-        \item C6A automatsikring eller en B10A automatsikring.
-        \item Sløjfeledning $1mm^2 - 2,5mm^2$
-    \end{itemize}
-    Eventuelle udstyr til lysstyring
-    \begin{itemize}
-        \item IHC controller
-        \item IHC strømforsyning
-        \item IHC 230V output relæ
-%        \item IKEA Trådfri pære 3 stk
-%        \item IKEA Trådfri tryk
-%        \item IKEA Trådfri gateway
-        \item WiFi Router inkl. switch
-%        \item Raspberry PI 3 model B+
-%        \item 5V 2,5A strømforsyning (usb lader)
-%        \item Nilan Comform 300 ventilationsanlægget med CTS602
-%        \item Nilan Connect 
-        \item IHC input 24/3
-        \item IHC output 24
-        \item IHC Fugt sensor
-    \end{itemize}
-
-    \item \textbf{Beskrivelse af opgaver eller installationer, der kan demonstrere dine tekniske,
-    håndværksmæssige og innovative færdigheder} \\ 
-    Der ville opbygges en test opstilling af drivhusstyringen. Der ville blive lavet en tegning og en beregning af ventilationsanlægget, samt der ville beskrivelse hvordan styringen kan automatiseret. Der ville beskrivelses hvordan der ville kunne være en central styringen til lysinstallation.
- 
-    \item \textbf{Forslag til dokumentation for de valgte løsninger.}
-    \begin{itemize}
-        \item Brugervejledning.
-        \item Tekniske tegninger.
-        \item Relevante beregninger.
-        \item Beskrivelse af love og regler som er gældene.
-    \end{itemize}
-    \item \textbf{Tidsstyring af projektet:}
-    \begin{itemize}
-        \item Den budgeteret tidsplan, ville blive opsat i Microsoft Excel eller i et lignene program.
-        \item Der ville også blive lavet en realiseret tidsplan i samme format.
-        \item Der ville blive lavet en status ved afslutning af arbejdsdagen.
-    \end{itemize}
-   
-\end{enumerate}
+    \multicolumn{2}{|p{\textwidth}|}{\textbf{3. Indhold af projektet, herunder mulige tekniske løsningsmodeller}} \\
+    \multicolumn{2}{|p{\textwidth}|}{Med den tid som er tilrådighed ville det blive presset hvis der skulle laves og
+    dokumenteres installationen og programmingerne af et helt hus, samt de-
+    sign af drivhus styringen. Drivhus styring ville der blive lagt vægt på samt
+    hvordan en intelligent bygningsinstallation kunne programmeres op. Det in-
+    novative del af projektet er automatisering af drivhuset i en privat bolig. Selv
+    om der har fået et fremryk de seneste par år, med en smart lysstyring i bolig,
+    så er det langt fra alle løsninger som er optimale i forhold til hvordan brugeren udnytter dette.} \\
+    \multicolumn{2}{|p{\textwidth}|}{Vandstyringen til drivhusstyringen} \\
+    \multicolumn{2}{|p{\textwidth}|}{\tabitem Siemens LOGO! 12/24RCE} \\
+    \multicolumn{2}{|p{\textwidth}|}{\tabitem Siemens LOGO! Power 24V 2,5A} \\
+    \multicolumn{2}{|p{\textwidth}|}{\tabitem Akvarie Pumpe} \\
+    \multicolumn{2}{|p{\textwidth}|}{\tabitem 2 stk Vandniveau måler med 0 - 10V udgang, eller et potentiometer ( 5k$\Omega$) og en serie modstand (6, 6k$\Omega$) } \\
+    \multicolumn{2}{|p{\textwidth}|}{\tabitem Tavle med din skinne eller montage boks med din skinne.} \\
+    \multicolumn{2}{|p{\textwidth}|}{\tabitem 3g1,5mm$^2$ tilledning} \\
+    \multicolumn{2}{|p{\textwidth}|}{\tabitem 3pol stikprop} \\
+\end{tabular}
+\newpage
+\begin{tabular}{|l|l|}
+    \multicolumn{2}{|p{\textwidth}|}{\tabitem C6A automatsikring eller en B10A automatsikring.} \\
+    \multicolumn{2}{|p{\textwidth}|}{\tabitem Sløjfeledning 1mm$^2$ - 2,5mm$^2$} \\
+    \multicolumn{2}{|p{\textwidth}|}{Eventuelle udstyr til lysstyring} \\
+    \multicolumn{2}{|p{\textwidth}|}{\tabitem IHC controller} \\
+    \multicolumn{2}{|p{\textwidth}|}{\tabitem IHC strømforsyning} \\
+    \multicolumn{2}{|p{\textwidth}|}{\tabitem IHC 230V output relæ} \\
+    \multicolumn{2}{|p{\textwidth}|}{\tabitem WiFi Router inkl. switch} \\
+    \multicolumn{2}{|p{\textwidth}|}{\tabitem HC input 24/3} \\
+    \multicolumn{2}{|p{\textwidth}|}{\tabitem IHC output 24} \\
+    \multicolumn{2}{|p{\textwidth}|}{\tabitem IHC Fugt sensor} \\
+    \hline
+    \multicolumn{2}{|p{\textwidth}|}{\textbf{4. Beskrivelse af opgaver eller installationer, der kan demonstrere dine tekniske, håndværksmæssige og innovative færdigheder}} \\
+    \multicolumn{2}{|p{\textwidth}|}{Der ville opbygges en test opstilling af drivhusstyringen. Der ville blive lavet
+    en tegning og en beregning af ventilationsanlægget, samt der ville beskrivel-
+    se hvordan styringen kan automatiseret. Der ville beskrivelses hvordan der
+    ville kunne være en central styringen til lysinstallation.} \\
+    \hline
+    \multicolumn{2}{|p{\textwidth}|}{\textbf{5. Forslag til dokumentation for de valgte løsninger.}} \\
+    \multicolumn{2}{|p{\textwidth}|}{\tabitem Brugervejledning.} \\
+    \multicolumn{2}{|p{\textwidth}|}{\tabitem Tekniske tegninger.} \\
+    \multicolumn{2}{|p{\textwidth}|}{\tabitem Relevante beregninger.} \\
+    \multicolumn{2}{|p{\textwidth}|}{\tabitem Beskrivelse af love og regler som er gældene.} \\
+    \hline
+    \multicolumn{2}{|p{\textwidth}|}{\textbf{6. Tidsstyring af projektet:}} \\
+    \multicolumn{2}{|p{\textwidth}|}{\tabitem Den budgeteret tidsplan, ville blive opsat i Microsoft Excel eller i et lignene program.} \\
+    \multicolumn{2}{|p{\textwidth}|}{\tabitem Der ville også blive lavet en realiseret tidsplan i samme format.} \\
+    \multicolumn{2}{|p{\textwidth}|}{\tabitem Der ville blive lavet en status ved afslutning af arbejdsdagen.} \\
+    \hline
+\end{tabular}
