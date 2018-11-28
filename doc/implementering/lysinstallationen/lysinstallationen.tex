@@ -1,5 +1,51 @@
 \subsection{Intelligent bygningsinstallation}
 
+\subsubsection{Scenarie i IHC installationen} \label{subsub:ihc_scener}
+\todo{Beskrivelse af de forskellige scenarier}
+
+\paragraph{Velkomst}
+Ved et enkelt tryk på kontakten i bryggers, ville lyset tænde ud i bryggers.\\
+Ved et langt tryk på samme kontakt, ville lyset tænde i bryggers, 
+samt ganglyset og lyset over køkkenbordet.\\
+Efter 2 minutter, slukkes lyset i bryggeres og efter yderlig et minut slukkes lyset i gangen.
+
+\paragraph{På vej ud af huset, i bryggers}
+Ved et kort tryk slukkes alt lyset i huset undtagen værelserne. 
+Lyset i bryggers slukkes efter 2 minutter. \\
+Ved et langt tryk slukkes alt lyset i huset samt værelserne. 
+Lyset i bryggeres slukkes efter 2 minutter, 
+ventilationsanlægget startes på høj udsugning efter 10 minutter og køre efter tidsstyringen. 
+
+\paragraph{Sluk alt lys i huset}
+Dette er et scenarie, som ikke er koblet til en kontakt men i stedet bruges af andre scenarie til, 
+at slukke for alt i huset med undtagelse af værelserne og soveværelset.
+
+\paragraph{Godnat scenarie i soveværelse}
+Ved et kort tryk på kontakten ved sengen, 
+så slukkes lyset soveværelset og i resten af huset med undtagelse af værelserne.\\
+Ved et langt tryk på kontakten ved sengen, 
+så slukkes alt lyset i huset også i alle værelserne.
+
+\paragraph{Godnat scenarie i resterende værelse}
+Ved et kort tryk på kontakten ved sengen, 
+så slukkes lyset soveværelset og i resten af huset med undtagelse af andre værelser og soveværelset. \\
+Ved et langt tryk på kontakten ved sengen, 
+så slukkes alt lyset i huset også i alle værelserne samt soveværelset.
+
+\paragraph{Tidsstyring af ventilationsanlægget}
+I hverdage ville anlægget blive startet på høj udsugning kl 10.00 hvis ud af huset ikke er blevet aktiveret inden. 
+Ventilationsanlægget ville køre i en 1 time hvor efter den ville køre ned på lav hastighed. \\
+Her efter ville anlægget startes på høj udsugning kl 13.00 (efter frokost) køre en halv time hvorefter den igen går ned på lav hastighed.
+Igen kl 19 ville anlægget starte på høj udsugning (efter aftensmaden) køre en halv time på høj og gå ned på lav hastighed.
+
+\paragraph{Overstyring af ventilationsanlægget}
+Hvis luftfugtigheden på badværelset bliver over 30\%, så startes ventilationsanlægget på høj udsugning til luftfugtigheden er faldet til 20 \% igen. \\
+Ved at trykke på den nederest kontakt til højre i køkkenet, ville ventilationsanlægget start på høj udsugning. Ved at trykke på samme kontakt ville anlægget stoppe. \\
+Ved at trykke på den nederest kontakt til højre i bryggers, ville ventilationsanlægget start på høj udsugning. Ved at trykke på samme kontakt ville anlægget stoppe.
+
+\subsubsection{Styring af udsugning i drivhuset} \label{subsub:ihc_drivhus}
+\todo{Beskrive hvordan styring af fugten i drivhuset}
+\todo{Hvis fugtigtheden falder til under 60 \%, starter styringen. Hvis den er over 80 \% stopper styringen}
 %Da IKEA's Trådfri app kun kan lave den mest basale styringen og ikke det som kunden til efterspørger. Så er vi ``tvunget`` til at kigge på nogle lidt andre løsningen end de meste standarde løsningen.
 
 %\subsubsection{Home-Assistant}
