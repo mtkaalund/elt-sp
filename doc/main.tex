@@ -18,9 +18,13 @@
     \usepackage{fancyhdr}
     \usepackage{xcolor}
     \usepackage{mathtools}
+    %\usepackage{multirow}     
+    %\usepackage{tabularx}
+    \usepackage{booktabs}% http://ctan.org/pkg/booktabs
+    \newcommand{\tabitem}{~~\llap{\textbullet}~~}
 
     \newcommand{\todo}[1]{\textcolor{red}{TODO: #1}\PackageWarning{TODO:}{#1!}}
-
+                 
     \pagestyle{fancy} 
     \fancyhf{}
     \fancyhead[LE,RO]{Et kig på IBI i privaten}
@@ -29,13 +33,13 @@
     \fancyfoot[LE,RO]{Side \thepage \hspace{1pt} af \pageref{LastPage}}
     \renewcommand{\headrulewidth}{1.5pt}
     \renewcommand{\footrulewidth}{1.5pt}
-         
+              
     \title{Et kig på IBI i privaten}
     
     \author{Michael Torp Kaalund \thanks{Mange tak til min læreplads Intego A/S}}
     
     \begin{document}
-
+  
     \input{titlepage}
 
 %    \begin{abstract}
