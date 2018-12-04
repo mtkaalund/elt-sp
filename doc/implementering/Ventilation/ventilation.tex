@@ -1,30 +1,248 @@
 \subsection{Ventilation} \label{sub:ventilation}
-Der tages udgangspunkt i BR18 \cite{BR18:Online} kravene.
-Under \S443 står kravene beskrevet at der skal være en udelufttilførsel på mindst $0,3 l/s pr. m^2$.
-I \S443 stk. 3 står der at udsugningen i køkkener skal forøges til mindst $20 l/s$ og \S443 stk. 4 beskriver udsugningen fra bade- og wc-rum skal kunne forøges til mindst 15 l/s.
-Desuden beskreves der også at wc-rum uden bad og bryggers skal der kunne udsuges mindst $10 l/s$. 
+Der tages udgangspunkt i BR18 [\cite{BR18:Online}] kravene.
+Under \S443 står kravene beskrevet at der skal være en udelufttilførsel på mindst 0,3 l/s pr. m$^2$.
+I \S443 stk. 3 står der at udsugningen i køkkener skal forøges til mindst 20 l/s og \S443 stk. 4 beskriver udsugningen fra bade- og wc-rum skal kunne forøges til mindst 15 l/s.
+Desuden beskreves der også at wc-rum uden bad og bryggers skal der kunne udsuges mindst 10 l/s. 
 I forhold til BR15 så der ikke nogle ændring i kravene som har betydning for beregningen.
-Dog beskriver BR18, i \S444 at kælder i enfamileshus skal der udsuges mindst $10 l/s$.
+Dog beskriver BR18, i \S444 at kælder i enfamileshus skal der udsuges mindst 10 l/s.
 
 \subsubsection{Bestemmelse af minimumskravet til anlægget} \label{subsub:minimumkrav_ventilation}
 Da kravene for lufttilførelsen kun gælder for de opvarmet beboelse kvm,
-det betyder at ydre væggeikke behøves at være med i udregningen.
-Ud fra det aspekt har der kunne konstateret, at kvm målene på tegningen er inklusiv væggene.
-For at få en mere præcis beregning af hvad ventilationssystemet skal kunne levere i til indblæsning,
-er der målt op på plantegningen og derefter udregnet kvm. \\
-Beregningseksemple og tabel over beregningerne for indblæsning er i \nameref{sub:indblaesning_beregning} på side \pageref{sub:indblaesning_beregning}. \\
-Beregningseksemple og tabel over beregningerne for udsugning er i \nameref{sub:udsugning_beregning} på side \pageref{sub:udsugning_beregning}.
+det betyder at ydre vægge ikke behøves at være med i udregningen.
+I BR18 [\cite{BR18:Online}], 
+så skal udelufttilførsel minimum være med 0,3 l/s pr. m$^2$ opvarmet etageareal.
+For at kunne lave beregningen, så skal det udregnes til en volumenstrømmen som er i m$^3$/t. 
+Dette gøres med at gange 3,6 $\frac{ \text{m}^3 \text{/ l} }{\text{ t / s} }$ for at omregne fra sekunder til timer og liter til kubicmeter.
+i tabel \ref{table:samregn_vent_ind} på side \pageref{table:samregn_vent_ind} har jeg regnet ud fra rummenes kvm.
 
-\begin{center}
-    $
-    d_{n} = \sqrt{ \frac{q_{v} \cdot 4}{V\cdot\pi\cdot3600}}
-    $ \\ 
-\end{center}
+\begin{table}[h!]
+     \begin{center}
+        \begin{tabular}{|l|r|r|r|}
+            \hline
+            Rum & kvm & Udelufttilførsel i l/s & Udelufttilførsel i m$^3$/t \\
+            \hline
+            Soveværelse       & 12,6 m$^2$ & 3,78 l/s & 13,61 m$^3$/t\\
+            Stue / Alrum / Køkken & 39,7 m$^2$ & 11,91 l/s & 42,88 m$^3$/t\\
+            Entré / Bryggers  & 9,6 m$^2$ & 2,88 l/s & 10,37 m$^3$/t\\
+            Gang              & 2,3 m$^2$ & 0,69 l/s & 2,48 m$^3$/t\\
+            Værelse 1         & 11,9 m$^2$ & 3,57 l/s & 12,85 m$^3$/t\\
+            Værelse 2         & 12,0 m$^2$ & 3,60 l/s & 12,96 m$^3$/t\\
+            Bad 1             & 4,3 m$^2$ & 1,29 l/s & 4,64 m$^3$/t\\
+            Bad 2             & 7,5 m$^2$ & 2,29 l/s & 8,24 m$^3$/t\\
+            \hline
+            \hline
+            Samlet & \underline{99,9 m$^2$} & \underline{30,01 l/s} & \underline{108,03 m$^3$/t} \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \caption{Udregning af Udelufttilførelsens minimumskrav}
+    \label{table:samregn_vent_ind}
+\end{table}
 
-Hvor $d_n$ er diameteren i meter, $V$ er lufthastigheden i $m/s$ og $q_v$ er volumenstrømmen i $m^{3}/t$.
+Så vores krav til udelufttilførsel er at anlægget skal kunne minimum lave et luftskifte på 30,01 l/s.
+I BR18 [\cite{BR18:Online}] beskreves der også hvor meget luft som skal udsuges i udvalgte rum, 
+de tal skal ligges sammen og ud fra det kan laves en sammenregning til minimumskravet. De udregning findes i tabel \ref{table:samregn_vent_ud} på side \pageref{table:samregn_vent_ud}.
+\begin{table}[h!]
+    \begin{center}
+       \begin{tabular}{|l|r|r|}
+           \hline
+           Rum & Udsugning i l/s & Udsugning i m$^3$/t \\
+           \hline
+           Stue / Alrum / Køkken & 20 l/s & 72 m$^3$/t\\
+           Entré / Bryggers  & 15 l/s & 54 m$^3$/t\\
+           Bad 1             & 15 l/s & 54 m$^3$/t\\
+           Bad 2             & 15 l/s & 54 m$^3$/t\\
+           \hline
+           \hline
+           Samlet & \underline{65 l/s} & \underline{234 m$^3$/t} \\
+           \hline
+       \end{tabular}
+   \end{center}
+   \caption{Udregning af udsugnings minimumskrav}
+   \label{table:samregn_vent_ud}
+\end{table}
+Her kan det ses, at minimumskrav til udsugning er højere end til udelufttilførselen. 
+Da der ønskes, at der er en ligevægt i ens ventilationssystem så beregnes rør diameteren udfra minimum volumenstrømmen i udsugningen.
+\begin{equation}\label{eqn:udregning_rd}
+d_{n} = \sqrt{ \frac{q_{v} \cdot 4}{V\cdot\pi\cdot3600}}
+\end{equation}
+Ligning (\ref{eqn:udregning_rd}) på side \pageref{eqn:udregning_rd} bruges til, udregne diameteren i meter, $V$ er lufthastigheden i $m/s$ og $q_v$ er volumenstrømmen i $m^{3}/t$.
+Typisk er lufthastigheden mellem 4 - 10 m/s. 
+\begin{align} \label{eqn:udregning_min_rd} 
+    d_{n}       &= \sqrt{ \frac{q_{v} \cdot 4}{V\cdot\pi\cdot3600}} = \sqrt{ \frac{234 \cdot 4}{4\cdot\pi\cdot3600}} = 0,1438 m = 143,8 mm
+\end{align}
+Beregningen af rørdiameteren i ligning (\ref{eqn:udregning_min_rd}) på side \pageref{eqn:udregning_min_rd} er fundet til 143,8 mm, 
+ikke findes i lindab's sortiment så vælges rørdiameteren til 160mm.
 
-\subsubsection{Indblæsning}
-\label{subsub:indblaesning}
+\subsubsection{Tryktab i udsugning} \label{subsub:tryktab_udsugning}
+Der er en oversigts tegning over ventilationssystem på side \pageref{fig:tegning_ventr}. 
+Længderne er skrevet på tabel \ref{table:oversigt_l_udsugning} på side \pageref{table:oversigt_l_udsugning}, 
+der er også valgt at inkludere hvilket volumenstrømmen som skal være i de enkelte rør. 
+\begin{align} \label{eqn:volumenstroem_sammenregning} 
+    q_{v}(E) &= q_{v}(F) + q_{v}(H) = 54 + 54 = 108 \text{ m}^3\text{/t}
+\end{align}
+Alle volumenstrømmene skal omregnes til lufthastighed, 
+for at kunne finde frem til tryk tabet i rørene, 
+det gøres i ligningen \ref{eqn:omregning_vs_til_lh}.
+\begin{align} \label{eqn:omregning_vs_til_lh}
+    d_{n} &= \sqrt{ \frac{ q_v \cdot 4 }{ V\cdot \pi \cdot 3600 } }  \nonumber \\
+          &\Downarrow  \nonumber \\
+    d_{n}^{2} &= \frac{ q_v \cdot 4 }{ V\cdot \pi \cdot 3600 } \nonumber \\
+          &\Downarrow \nonumber \\
+    V     &= \frac{ q_v \cdot 4 }{ d_{n}^{2} \cdot \pi \cdot 3600 } 
+\end{align}
+Ved at bruge formulen i \ref{eqn:omregning_vs_til_lh}, 
+giver den lufthastighed som bruges til, 
+at finde tryktabet per meter i databladet for røret.
+\begin{table}[h!]
+    \begin{center}
+       \begin{tabular}{|l|r|r|r|r|r|}
+           \hline
+           Længde & meter & q$_{v}$ & V & P$_{a}$ / m & Tryktab\\
+           \hline
+           A & 1,38 m & 270 m$^3$/t & 3,73 m/s & 1,2 P$_{a}$/m & 1,656 Pa\\
+           B & 0,27 m & 162 m$^3$/t & 2,24 m/s & 0,5 P$_{a}$/m & 0,135 Pa\\
+           C & 0,75 m & 72  m$^3$/t & 0,99 m/s & 0,1 P$_{a}$/m & 0,075 Pa\\
+           D & 4,43 m & 54  m$^3$/t & 0,75 m/s & 0,1 P$_{a}$/m & 0,443 Pa\\
+           E & 0,46 m & 108 m$^3$/t & 1,49 m/s & 0,2 P$_{a}$/m  & 0,092 Pa\\
+           F & 0,94 m & 54 m$^3$/t & 0,75 m/s & 0,1 P$_{a}$/m & 0,094 Pa\\
+           G & 2,79 m & 54 m$^3$/t & 0,75 m/s & 0,1 P$_{a}$/m & 0,279 Pa\\
+           H & 0,45 m & 54 m$^3$/t & 0,75 m/s& 0,1 P$_{a}$/m & 0,045 Pa\\
+           \hline
+       \end{tabular}
+   \end{center}
+   \caption{Oversigt over længderne brugt i udsugningen}
+   \label{table:oversigt_l_udsugning}
+\end{table}
+I tabel \ref{table:oversigt_l_udsugning}, er lufthastigheden som skal bruges til at finde tryktabet i T-rørene.
+Dette gøres ved, at aflæse graferne i databladet for T-stykkerne.
+\begin{table}[h!]
+    \begin{center}
+       \begin{tabular}{|l|r|r|r|}
+           \hline
+           T-rør & V$_{1}$ & V$_{2}$ & Tryktab \\
+           \hline
+           T$_{\text{B->A}}$ & 2,24 m/s & 3,73 m/s & 4,8 Pa \\ 
+           T$_{\text{C->A}}$ & 0,99 m/s & 3,73 m/s & 2,8 Pa \\
+           T$_{\text{E->B}}$ & 1,49 m/s & 2,24 m/s & 0,6 Pa \\
+           T$_{\text{D->B}}$ & 0,75 m/s & 2,24 m/s & 1,5 Pa \\
+           T$_{\text{F->E}}$ & 0,75 m/s & 1,49 m/s & 0,8 Pa \\
+           T$_{\text{G->E}}$ & 0,75 m/s & 1,49 m/s & 1,0 Pa \\
+           \hline
+       \end{tabular}
+   \end{center}
+   \caption{Oversigt tryktabet i T-rør}
+   \label{table:oversigt_tryktab_t-roer}
+\end{table}
+Nu kan tryktabet findes på det stykke som er længes væk fra ventilationsanlægget, 
+som er rum bad 2.
+\begin{table}[h!]
+    \begin{center}
+       \begin{tabular}{lcr}
+           \hline
+           \hline
+           \textbf{Bad 2} &  & \\
+           \hline
+           \hline
+           Ventil (-5mm åbning) & : & 21,000 Pa \\
+           90$^\circ$ BU    & : & 0,500 Pa \\
+           Rør$_{\text{H}}$ & : & 0,045 Pa \\
+           90$^\circ$ BU    & : & 0,500 Pa \\
+           Rør$_{\text{G}}$ & : & 0,279 Pa \\
+           T-Stykke$_{\text{G->E}}$  & : & 1,000 Pa\\
+           Rør$_{\text{E}}$ & : & 0,092 Pa \\
+           T-Stykke$_{\text{E->B}}$  & : & 0,600 Pa\\
+           Rør$_{\text{B}}$ & : & 0,135 Pa \\
+           T-Stykke$_{\text{B->A}}$  & : & 4,800 Pa\\
+           Rør$_{\text{A}}$ & : & 1,656 Pa \\
+           \hline
+           Samlet tryktab    & : & \underline{\underline{ 30,607 Pa}} 
+       \end{tabular}
+   \end{center}
+   %\caption{Oversigt tryktabet i T-rør}
+   %\label{table:oversigt_tryktab_t-roer}
+\end{table}
 
-\subsubsection{Udsugning}
-\label{subsub:udsugning}
+\subsubsection{Tryktab i indblæsning} \label{subsub:tryktab_indblaesning}
+I tabel \ref{table:oversigt_l_indblaesning}, beskriver længderne brugt til indblæsningen. 
+Lufthastighed, Tryktab per meter beskrevet i tabellen er fundet ved hjælp af lindab's App `Vent Tools',
+og tryktabet er herefter udregnet fra de tal.
+\begin{table}[h!]
+    \begin{center}
+       \begin{tabular}{|l|r|r|r|r|r|}
+           \hline
+           Længde & meter & q$_{v}$ & V & P$_{a}$ / m & Tryktab\\
+           \hline
+            P & 3,94 m & 13,61 m$^3$/t & 0,19 m/s & 0,0 P$_{a}$/m & 0 Pa\\
+            O & 0,74 m & 13,61 m$^3$/t & 0,19 m/s & 0,0 P$_{a}$/m & 0 Pa\\
+            N & 4,71 m & 56,49 m$^3$/t & 0,78 m/s & 0,1 P$_{a}$/m & 0,471 Pa\\
+            M & 4,24 m & 12,96 m$^3$/t & 0,18 m/s & 0,0 P$_{a}$/m & 0 Pa\\
+            K & 3,50 m & 25,81 m$^3$/t & 0,36 m/s & 0,0 P$_{a}$/m & 0 Pa\\
+            J & 1,78 m & 82,30 m$^3$/t & 1,14 m/s & 0,1 P$_{a}$/m & 0,178 Pa\\
+            I & 0,74 m & 82,30 m$^3$/t & 1,14 m/s & 0,1 P$_{a}$/m & 0,074 Pa\\
+           \hline
+       \end{tabular}
+   \end{center}
+   \caption{Oversigt over længderne brugt i indblæsning}
+   \label{table:oversigt_l_indblaesning}
+\end{table}
+Tryktabet i T-stykkerne er beskrevet i tabel \ref{table:oversigt_tryktab_t-roer_ind}. 
+Lufthastighed for Stue/Alrum/Køkken og Værelse 1 er beregnet ud fra \ref{eqn:omregning_vs_til_lh} på side \pageref{eqn:omregning_vs_til_lh}.
+Stue's udregning kan se i udregning \ref{eqn:udregning_af_vs_stue}.
+\begin{align} \label{eqn:udregning_af_vs_stue}
+    V     &= \frac{ q_v \cdot 4 }{ d_{n}^{2} \cdot \pi \cdot 3600 } \nonumber \\
+    V     &= \frac{ 42,88 \cdot 4 }{ (160/1000)^{2} \cdot \pi \cdot 3600 } \nonumber \\
+    V     &= \frac{ 171,53 }{ 92,16 \cdot \pi } \nonumber \\
+    V     &= 0,592 \text{ m/s}
+\end{align}
+Når der aflæses i databladet for T-stykkerne, så er det udenfor skalaen.
+Det kommer af, at rørdiameteren er sat efter udsugning det sætter lufthastigheden ned og derfor kan tabet sættes til 0 Pa.
+Det betyder, at indblæsningen ikke ville have noget tab af betydning i T-stykkerne.
+\begin{table}[h!]
+    \begin{center}
+       \begin{tabular}{|l|r|r|r|}
+           \hline
+           T-rør & V$_{1}$ & V$_{2}$ & Tryktab \\
+           \hline
+           T$_{\text{J->N}}$ & 1,14 m/s & 0,78 m/s & 0 Pa \\ 
+           T$_{\text{J->K}}$ & 1,14 m/s & 0,36 m/s & 0 Pa \\ 
+           T$_{\text{N->O}}$ & 0,78 m/s & 0,19 m/s & 0 Pa \\ 
+           T$_{\text{N->Stue}}$ & 0,78 m/s & 0,59 m/s & 0 Pa \\ 
+           T$_{\text{K->M}}$ & 0,36 m/s & 0,18 m/s & 0 Pa \\ 
+           T$_{\text{K->Værelse 1}}$ & 0,36 m/s & 0,71 m/s & 0 Pa \\ 
+           \hline
+       \end{tabular}
+   \end{center}
+   \caption{Oversigt tryktabet i T-rør for indblæsning}
+   \label{table:oversigt_tryktab_t-roer_ind}
+\end{table}
+Nu kan tabet findes på den længeste strækning. Som er på indblæsning er soveværelset.
+\begin{table}[h!]
+    \begin{center}
+       \begin{tabular}{lcr}
+           \hline
+           \hline
+           \textbf{Soveværelse} &  & \\
+           \hline
+           \hline
+           Ventil (6mm åbning) & : & 15,000 Pa \\
+           90$^\circ$ BU    & : & 0 Pa \\
+           Rør$_{\text{P}}$ & : & 0 Pa \\
+           90$^\circ$ BU    & : & 0 Pa \\
+           Rør$_{\text{O}}$ & : & 0 Pa \\
+           T-Stykke$_{\text{N->O}}$  & : & 0 Pa\\
+           Rør$_{\text{N}}$ & : & 0,471 Pa \\
+           T-Stykke$_{\text{J->N}}$  & : & 0 Pa\\
+           Rør$_{\text{J}}$ & : & 0,178 Pa \\
+           90$^\circ$ BU    & : & 3,800 Pa \\
+           Rør$_{\text{I}}$ & : & 0,074 Pa \\
+           \hline
+           Samlet tryktab & : & \underline{\underline{ 19,523 Pa}} 
+       \end{tabular}
+   \end{center}
+   %\caption{Oversigt tryktabet i T-rør}
+   %\label{table:oversigt_tryktab_t-roer}
+\end{table}
+
+\subsubsection{Valg af ventilationsaggregater}
+\todo{Valgt Beskrive hvordan der skal vælgees}
