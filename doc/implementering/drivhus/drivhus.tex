@@ -105,7 +105,6 @@ Da enheden bliver temperatur uafhængeligt og siger om hvor meget vand der i for
 \end{center}
 \caption{Luft mættet med vanddamp}\label{fig:luft_vanddamp}
 \end{figure}
-Der bruges en IHC fugt/temperatur sensor, som melder tilbage med en temperature, relativ fugtighed, dugpunkt og et alarm signal.
 
 \subsubsection{Beregning af pumpetiden}\label{subsubsec:beregning_af_pumpetiden}
 For at vide hvor langtid pumpen skal køre for, at nå en givet relative fugtighed, 
@@ -176,6 +175,22 @@ så vandniveauet i regnvandsopsamleren kan måles.
 Denne LOGO! enhed har også relæ udgange, 
 hvilket gør det muligt at styre flere forskellige spænding niveauer.
 Så er det også muligt, at udvide med forskellige 24 V moduler, hvilket ikke er mulig i 230 V versionen.
+
+\subsubsection{Overdragelse af fugtmåling}
+Der bruges en IHC fugt/temperatur sensor, som melder tilbage med en temperature, relativ fugtighed, dugpunkt og et alarm signal.
+Selv om det er en 24V enhed så kan den umildbart ikke tilsluttes direkte til Siemens LOGO!, da den sender en bitstrøm ud.\\
+Den valgte løsning er, at tilslutte den IHC controlleren og få IHC controlleren til, at melde \%RF til LOGO! styringen. \\
+
+Til dette er der lavet en brugerdefineret funktionsblok i IHC Visual, 
+som tager \%RF fra fugt sensoren og regner det om til en tidsværdi. \\ 
+Dette gøres i 1\% intervalg, men hvor meget denne ene procent er i tiden kan indstilles. \\
+Når funktionsblok har omregnet \%RF til en tidsværdi, så holder den udgangen højt i den samlet tidsperiode. \\
+Der er også valgt, at implementere et aktiv signal, som skal holdes høj før den omdanner \%RF.\\
+
+I LOGO! controlleren måler den så hvor langtid dens indgangsben bliver holdt højt.
+\todo{Screen shot af IHC funktionsblokken.}
+
+
 
 \subsubsection{Analog indgange}
 på side 41 i \cite{logo_sm} og side 42 i \cite{logo_sm} står der omkring modstande til spændingsdeling i LOGO!
