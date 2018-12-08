@@ -168,17 +168,15 @@ Og igen bruger $\Delta\%RF$ på 1\%, så giver det henholdsvis
 
 \subsubsection{Styring}
 Til drivhus styring er der valgt, at bruge en Siemens LOGO! 12/24RCE. 
-Den er valgt ud fra at den har indbygget 0 - 10 V input, 
-som gør det muligt at tilslutte et potentiometer med en flyder på, 
-så vandniveauet i regnvandsopsamleren kan måles.
 
 Denne LOGO! enhed har også relæ udgange, 
 hvilket gør det muligt at styre flere forskellige spænding niveauer.
-Så er det også muligt, at udvide med forskellige 24 V moduler, hvilket ikke er mulig i 230 V versionen.
+Så er det også muligt, at udvide med forskellige 24 \vdc moduler, hvilket ikke er mulig i 230 V versionen.
 
 \subsubsection{Overdragelse af fugtmåling}
 Der bruges en IHC fugt/temperatur sensor, som melder tilbage med en temperature, relativ fugtighed, dugpunkt og et alarm signal.
-Selv om det er en 24V enhed så kan den umildbart ikke tilsluttes direkte til Siemens LOGO!, da den sender en bitstrøm ud.\\
+Selv om det er en 24\vdc enhed så kan den umildbart ikke tilsluttes direkte til Siemens LOGO!, 
+da den sender en bitstrøm ud, som efter signe er et 5\vdc signal\\
 Den valgte løsning er, at tilslutte den IHC controlleren og få IHC controlleren til, at melde \%RF til LOGO! styringen. \\
 
 Til dette er der lavet en brugerdefineret funktionsblok i IHC Visual, 
@@ -187,10 +185,26 @@ Dette gøres i 1\% intervalg, men hvor meget denne ene procent er i tiden kan in
 Når funktionsblok har omregnet \%RF til en tidsværdi, så holder den udgangen højt i den samlet tidsperiode. \\
 Der er også valgt, at implementere et aktiv signal, som skal holdes høj før den omdanner \%RF.\\
 
-I LOGO! controlleren måler den så hvor langtid dens indgangsben bliver holdt højt.
-\todo{Screen shot af IHC funktionsblokken.}
-
-
+I LOGO! controlleren måler den hvor langtid dens indgangsben bliver holdt højt.
+Det giver en værdi mellem 0 - 1000 mS, som passer overens med 0 - 100 \%RF. Den bliver omdannet via math funktionsblok til en værdi som kan gå i PI regulator funktionsblok.
 
 \subsubsection{Analog indgange}
-på side 41 i \cite{logo_sm} og side 42 i \cite{logo_sm} står der omkring modstande til spændingsdeling i LOGO!
+Her er det muligt at anvende 4 af indgangsben som analog indgange fra 0 - 10 V.
+Den har desværre ikke mulighed for at anvende, 
+analog indgange som 4 - 20 mA så der kan bruges en PT100 temperatur sensor,
+men den kan findes som et udvidelsemodul.
+
+Måling af vandniveauet i regnvandsopsamleren, er vigigt for at beskytte vandpumpen. 
+Typisk bruges vandet som en del af lejerne og hvis de komme til, 
+at stå uden vand og pumpen startes, 
+så riskere man, at ødelægge pumpen
+
+Hvis der ikke ønskes en måling af hvor meget vand der er i tanken, så kan flyde kontakt bruges.
+Her skal den slukke når vandniveauet er faldet til lige over vandpumpen.
+Hvis der ønskes en måling af vandniveauet, så kan der bruges en spændingsdeling som tager 24\vdc og alt efter vandniveauet giver 0 - 10\vdc ud,
+her ville det også være en god ide, at når den bunder ud, at den giver 0\vdc. Omregning af spænding til liter kan gøres i programfladen. 
+Under udvikling af styring, er der brugt en spændingsdeling med et potentiometer.
+
+Siemens LOGO! manualen, på side 41 og 42 i \cite{logo_sm} står der beskrevet omkring spændingsdeling med modstande. 
+De anbefaler ved 24 \vdc at bruge 5k\ohm potentiometer i serie med en 6k6\ohm modstand, 
+et billede af opsætning kan finde på side \pageref{man:logo_side_42} i bilagen.
