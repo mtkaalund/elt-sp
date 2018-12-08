@@ -1,0 +1,870 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE utcs_project [
+   <!ELEMENT utcs_project ANY>
+   <!ATTLIST utcs_project version_major CDATA #REQUIRED
+                  version_minor CDATA #REQUIRED
+                  id1 CDATA #REQUIRED
+                  id2 CDATA #REQUIRED
+                  icon CDATA "_0x0"
+                  last_unique_id CDATA #REQUIRED>
+   <!ELEMENT modified ANY>
+   <!ATTLIST modified year CDATA #REQUIRED
+                  month CDATA #REQUIRED
+                  day CDATA #REQUIRED
+                  hour CDATA #REQUIRED
+                  minute CDATA #REQUIRED>
+   <!ELEMENT customer_info ANY>
+   <!ATTLIST customer_info name CDATA ""
+                  address CDATA ""
+                  city CDATA ""
+                  zipcode CDATA ""
+                  country CDATA ""
+                  phone CDATA ""
+                  mobilephone CDATA ""
+                  email CDATA ""
+                  udf CDATA "">
+   <!ELEMENT installer_info ANY>
+   <!ATTLIST installer_info name CDATA ""
+                  address CDATA ""
+                  city CDATA ""
+                  zipcode CDATA ""
+                  country CDATA ""
+                  phone CDATA ""
+                  mobilephone CDATA ""
+                  email CDATA ""
+                  udf CDATA "">
+   <!ELEMENT project_info ANY>
+   <!ATTLIST project_info programmer CDATA ""
+                  number CDATA ""
+                  drawing CDATA ""
+                  type CDATA ""
+                  description CDATA ""
+                  udf CDATA "">
+   <!ELEMENT enum_definitions ANY>
+   <!ATTLIST enum_definitions id ID #REQUIRED
+                  name CDATA ""
+                  note CDATA ""
+                  udf CDATA "">
+   <!ELEMENT enum_definition ANY>
+   <!ATTLIST enum_definition id ID #REQUIRED
+                  typeid CDATA "_0x0"
+                  name CDATA ""
+                  note CDATA ""
+                  udf CDATA "">
+   <!ELEMENT enum_value ANY>
+   <!ATTLIST enum_value id ID #REQUIRED
+                  typeid CDATA "_0x0"
+                  name CDATA ""
+                  note CDATA ""
+                  index CDATA "0"
+                  udf CDATA "">
+   <!ELEMENT groups ANY>
+   <!ATTLIST groups id ID #REQUIRED
+                  name CDATA ""
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  udf CDATA "">
+   <!ELEMENT group ANY>
+   <!ATTLIST group id ID #REQUIRED
+                  name CDATA ""
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  udf CDATA "">
+   <!ELEMENT product_dataline ANY>
+   <!ATTLIST product_dataline id ID #REQUIRED
+                  product_identifier CDATA #REQUIRED
+                  name CDATA ""
+                  locked (yes | no) "no"
+                  enduser_report (yes | no) "no"
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  helpfile CDATA ""
+                  position CDATA ""
+                  cabletype CDATA ""
+                  cablenumber CDATA ""
+                  documentation_tag CDATA ""
+                  power_group CDATA ""
+                  udf CDATA "">
+   <!ELEMENT dataline_output ANY>
+   <!ATTLIST dataline_output id ID #REQUIRED
+                  name CDATA ""
+                  note CDATA ""
+                  inivalue (on | off) "off"
+                  backup (yes | no) "no"
+                  type (led | unspecified) "unspecified"
+                  address_dataline CDATA "_0x0"
+                  cable_colour CDATA ""
+                  udf CDATA "">
+   <!ELEMENT scenes ANY>
+   <!ATTLIST scenes id ID #REQUIRED
+                  name CDATA ""
+                  scene_resource IDREF #REQUIRED
+                  note CDATA ""
+                  udf CDATA "">
+   <!ELEMENT scene_relay ANY>
+   <!ATTLIST scene_relay id ID #REQUIRED
+                  name CDATA ""
+                  relay_value (on | off) "off"
+                  delay_ms CDATA "0"
+                  note CDATA ""
+                  link IDREF #REQUIRED
+                  udf CDATA "">
+   <!ELEMENT dataline_input ANY>
+   <!ATTLIST dataline_input id ID #REQUIRED
+                  name CDATA ""
+                  note CDATA ""
+                  inivalue (on | off) "off"
+                  address_dataline CDATA "_0x0"
+                  cable_colour CDATA ""
+                  udf CDATA "">
+   <!ELEMENT link_from_resource ANY>
+   <!ATTLIST link_from_resource id ID #REQUIRED
+                  name CDATA ""
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  link IDREF #REQUIRED
+                  udf CDATA "">
+   <!ELEMENT resource_humidity_level ANY>
+   <!ATTLIST resource_humidity_level id ID #REQUIRED
+                  name CDATA ""
+                  backup (yes | no) "no"
+                  note CDATA ""
+                  inivalue CDATA "0.00"
+                  accessibility (read | write | read-write) "read-write"
+                  note-2 CDATA ""
+                  udf CDATA "">
+   <!ELEMENT resource_temperature ANY>
+   <!ATTLIST resource_temperature id ID #REQUIRED
+                  name CDATA ""
+                  backup (yes | no) "no"
+                  note CDATA ""
+                  inivalue CDATA "0.00"
+                  accessibility (read | write | read-write) "read-write"
+                  setting (yes | no) "no"
+                  note-2 CDATA ""
+                  udf CDATA "">
+   <!ELEMENT resource_input ANY>
+   <!ATTLIST resource_input id ID #REQUIRED
+                  name CDATA ""
+                  backup (yes | no) "no"
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  inivalue (on | off) "off"
+                  accessibility (read | write | read-write) "read-write"
+                  note-2 CDATA ""
+                  udf CDATA "">
+   <!ELEMENT settings ANY>
+   <!ATTLIST settings id ID #REQUIRED
+                  name CDATA ""
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  udf CDATA "">
+   <!ELEMENT functionblock ANY>
+   <!ATTLIST functionblock id ID #REQUIRED
+                  name CDATA ""
+                  master_schneider_electric (yes | no) "no"
+                  master_type CDATA ""
+                  master_version CDATA ""
+                  master_name CDATA ""
+                  master_programmer CDATA ""
+                  master_date_year CDATA "0"
+                  master_date_month CDATA "0"
+                  master_date_day CDATA "0"
+                  locked (yes | no) "no"
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  helpfile CDATA ""
+                  udf CDATA "">
+   <!ELEMENT inputs ANY>
+   <!ATTLIST inputs id ID #REQUIRED
+                  name CDATA ""
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  udf CDATA "">
+   <!ELEMENT link_to_resource ANY>
+   <!ATTLIST link_to_resource id ID #REQUIRED
+                  name CDATA ""
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  link IDREF #REQUIRED
+                  udf CDATA "">
+   <!ELEMENT outputs ANY>
+   <!ATTLIST outputs id ID #REQUIRED
+                  name CDATA ""
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  udf CDATA "">
+   <!ELEMENT resource_output ANY>
+   <!ATTLIST resource_output id ID #REQUIRED
+                  name CDATA ""
+                  backup (yes | no) "no"
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  inivalue (on | off) "off"
+                  accessibility (read | write | read-write) "read-write"
+                  note-2 CDATA ""
+                  udf CDATA "">
+   <!ELEMENT resource_timer ANY>
+   <!ATTLIST resource_timer id ID #REQUIRED
+                  name CDATA ""
+                  backup (yes | no) "no"
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  hour CDATA #REQUIRED
+                  minute CDATA #REQUIRED
+                  second CDATA #REQUIRED
+                  millisecond CDATA #REQUIRED
+                  note-2 CDATA ""
+                  udf CDATA "">
+   <!ELEMENT resource_flag ANY>
+   <!ATTLIST resource_flag id ID #REQUIRED
+                  name CDATA ""
+                  backup (yes | no) "no"
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  inivalue (on | off) "off"
+                  accessibility (read | write | read-write) "read-write"
+                  note-2 CDATA ""
+                  udf CDATA "">
+   <!ELEMENT internalsettings ANY>
+   <!ATTLIST internalsettings id ID #REQUIRED
+                  name CDATA ""
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  udf CDATA "">
+   <!ELEMENT programs ANY>
+   <!ATTLIST programs id ID #REQUIRED
+                  name CDATA ""
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  udf CDATA "">
+   <!ELEMENT program_simple ANY>
+   <!ATTLIST program_simple id ID #REQUIRED
+                  name CDATA ""
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  udf CDATA "">
+   <!ELEMENT events ANY>
+   <!ATTLIST events id ID #REQUIRED
+                  name CDATA ""
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  udf CDATA "">
+   <!ELEMENT event ANY>
+   <!ATTLIST event id ID #REQUIRED
+                  name CDATA ""
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  link1 IDREF #IMPLIED
+                  link2 IDREF #IMPLIED
+                  method CDATA "_0x0"
+                  udf CDATA "">
+   <!ELEMENT actions ANY>
+   <!ATTLIST actions id ID #REQUIRED
+                  name CDATA ""
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  type CDATA "_0x0"
+                  udf CDATA "">
+   <!ELEMENT program_sub ANY>
+   <!ATTLIST program_sub id ID #REQUIRED
+                  name CDATA ""
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  udf CDATA "">
+   <!ELEMENT conditions ANY>
+   <!ATTLIST conditions id ID #REQUIRED
+                  name CDATA ""
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  type (and | or) "and"
+                  udf CDATA "">
+   <!ELEMENT condition ANY>
+   <!ATTLIST condition id ID #REQUIRED
+                  name CDATA ""
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  link1 IDREF #IMPLIED
+                  link2 IDREF #IMPLIED
+                  method CDATA "_0x0"
+                  udf CDATA "">
+   <!ELEMENT action ANY>
+   <!ATTLIST action id ID #REQUIRED
+                  name CDATA ""
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  link1 IDREF #IMPLIED
+                  link2 IDREF #IMPLIED
+                  method CDATA "_0x0"
+                  udf CDATA "">
+   <!ELEMENT resource_scene ANY>
+   <!ATTLIST resource_scene id ID #REQUIRED
+                  name CDATA ""
+                  note CDATA ""
+                  icon CDATA "_0x89"
+                  hide_dialog (yes | no) "no"
+                  note-2 CDATA ""
+                  udf CDATA "">
+   <!ELEMENT scene_link ANY>
+   <!ATTLIST scene_link id ID #REQUIRED
+                  name CDATA ""
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  link IDREF #REQUIRED
+                  udf CDATA "">
+   <!ELEMENT resource_enum ANY>
+   <!ATTLIST resource_enum id ID #REQUIRED
+                  name CDATA ""
+                  typedef IDREF #REQUIRED
+                  inivalue IDREF #REQUIRED
+                  backup (yes | no) "no"
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  accessibility (read | write | read-write) "read-write"
+                  note-2 CDATA ""
+                  udf CDATA "">
+   <!ELEMENT event_power ANY>
+   <!ATTLIST event_power id ID #REQUIRED
+                  name CDATA ""
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  type (up | down) "up"
+                  udf CDATA "">
+   <!ELEMENT program_case ANY>
+   <!ATTLIST program_case id ID #REQUIRED
+                  name CDATA ""
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  link IDREF #IMPLIED
+                  udf CDATA "">
+   <!ELEMENT case_action ANY>
+   <!ATTLIST case_action id ID #REQUIRED
+                  name CDATA ""
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  variable IDREF #REQUIRED
+                  value IDREF #REQUIRED
+                  udf CDATA "">
+   <!ELEMENT documentation_modules ANY>
+   <!ATTLIST documentation_modules id ID #REQUIRED
+                  name CDATA ""
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  udf CDATA "">
+   <!ELEMENT dataline_input_modules ANY>
+   <!ATTLIST dataline_input_modules id ID #REQUIRED
+                  name CDATA ""
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  udf CDATA "">
+   <!ELEMENT dataline_output_modules ANY>
+   <!ATTLIST dataline_output_modules id ID #REQUIRED
+                  name CDATA ""
+                  icon CDATA "_0x0"
+                  note CDATA ""
+                  udf CDATA "">
+]>
+<utcs_project version_major="4" version_minor="0" id1="_0x30e0f25" id2="_0x70b1c2b" last_unique_id="_0x2120">
+   <modified year="2018" month="12" day="7" hour="11" minute="28"/>
+   <customer_info/>
+   <installer_info/>
+   <project_info programmer="mtkaa"/>
+   <enum_definitions id="_0x3046" name="Enumerator definitioner">
+      <enum_definition id="_0x5547" name="Ved deaktivering skal lyset">
+         <enum_value id="_0x5648" name="Tænd ubetinget"/>
+         <enum_value id="_0x5748" name="Tænd hvis skumring er aktiv" index="1"/>
+         <enum_value id="_0x5848" name="Sluk ubetinget" index="2"/>
+      </enum_definition>
+      <enum_definition id="_0x17b47" name="Light nr:">
+         <enum_value id="_0x17c48" name="Light 1"/>
+         <enum_value id="_0x17d48" name="Light 2" index="1"/>
+         <enum_value id="_0x17e48" name="Light 3" index="2"/>
+         <enum_value id="_0x17f48" name="Light 4" index="3"/>
+         <enum_value id="_0x18048" name="Light 5" index="4"/>
+         <enum_value id="_0x18148" name="Light 6" index="5"/>
+         <enum_value id="_0x18248" name="Light 7" index="6"/>
+         <enum_value id="_0x18348" name="Light 8" index="7"/>
+         <enum_value id="_0x18448" name="Light 9" index="8"/>
+      </enum_definition>
+      <enum_definition id="_0x37047" name="Ur valg">
+         <enum_value id="_0x37148" name="Ur 1" index="3"/>
+         <enum_value id="_0x37248" name="Ur 2" index="4"/>
+         <enum_value id="_0x37348" name="Ingen Ur funktion"/>
+         <enum_value id="_0x37448" name="Ur 3" index="5"/>
+         <enum_value id="_0x37548" name="Ur 4" index="6"/>
+         <enum_value id="_0x37648" name="Ur 5" index="7"/>
+         <enum_value id="_0x37748" name="Ur 6" index="8"/>
+         <enum_value id="_0x37848" name="Ur 7" index="9"/>
+         <enum_value id="_0x37948" name="Ur 6 og 7" index="13"/>
+         <enum_value id="_0x37a48" name="Ur 1 og 2 og 3 og 4" index="16"/>
+         <enum_value id="_0x37b48" name="Ur 1 og 2 og 3 og 4 og 5" index="17"/>
+         <enum_value id="_0x37c48" name="Ur 1 og 2 og 3 og 4 og 5 og 6 og 7" index="18"/>
+         <enum_value id="_0x37d48" name="UR ikke Atkiv" index="19"/>
+         <enum_value id="_0x37e48" name="Ur 1 og 2" index="10"/>
+         <enum_value id="_0x37f48" name="Ur 3 og 4" index="11"/>
+         <enum_value id="_0x38048" name="Ur 5 og 6" index="12"/>
+         <enum_value id="_0x38148" name="Manual Kip" index="20"/>
+         <enum_value id="_0x38248" name="Ur 1 og 2 og 3" index="14"/>
+         <enum_value id="_0x38348" name="Ur 4 og 5 og 6" index="15"/>
+         <enum_value id="_0x38448" name="ON" index="1"/>
+         <enum_value id="_0x38548" name="OFF" index="2"/>
+      </enum_definition>
+      <enum_definition id="_0xc5547" name="Vælg Funktion">
+         <enum_value id="_0xc5648" name="Følg"/>
+         <enum_value id="_0xc5748" name="Kip" index="1"/>
+      </enum_definition>
+      <enum_definition id="_0xc5847" name="Indgang 1 - Permitsignal bliver &quot;OFF&quot;">
+         <enum_value id="_0xc5948" name="Udgang bliver &quot;OFF&quot;"/>
+         <enum_value id="_0xc5a48" name="Udgang ændres ikke !" index="1"/>
+      </enum_definition>
+      <enum_definition id="_0xd7047" name="Hustilstand">
+         <enum_value id="_0xd7148" name="Hjemme"/>
+         <enum_value id="_0xd7248" name="Nat - mørkt" index="2"/>
+         <enum_value id="_0xd7348" name="Ikke hjemme" index="3"/>
+         <enum_value id="_0xd7448" name="Nat - lyst" index="1"/>
+      </enum_definition>
+      <enum_definition id="_0xd9147" name="Driftstilstand DK - Varmeblok">
+         <enum_value id="_0xd9248" name="Ubeboet" index="1"/>
+         <enum_value id="_0xd9348" name="Beboet"/>
+         <enum_value id="_0xd9448" name="Frostsikring" index="2"/>
+         <enum_value id="_0xd9548" name="Test" index="3"/>
+         <enum_value id="_0xd9648" name="Ventilmotion" index="4"/>
+      </enum_definition>
+      <enum_definition id="_0xd9747" name="Ventilations drift form manuel">
+         <enum_value id="_0xd9848" name="Varme"/>
+         <enum_value id="_0xd9948" name="Køl" index="1"/>
+         <enum_value id="_0xd9a48" name="Automatisk" index="2"/>
+         <enum_value id="_0xd9b48" name="Ikke aktiv" index="3"/>
+      </enum_definition>
+      <enum_definition id="_0xd9c47" name="Driftstilstand DK - 3">
+         <enum_value id="_0xd9d48" name="Beboet"/>
+         <enum_value id="_0xd9e48" name="Ubeboet" index="1"/>
+         <enum_value id="_0xd9f48" name="Frostsikring" index="2"/>
+         <enum_value id="_0xda048" name="Gæster" index="3"/>
+         <enum_value id="_0xda148" name="Ventilmotion" index="5"/>
+         <enum_value id="_0xda248" name="Test" index="4"/>
+      </enum_definition>
+      <enum_definition id="_0xda347" name="Ventilations drift trin">
+         <enum_value id="_0xda448" name="Stoppet"/>
+         <enum_value id="_0xda548" name="Trin 1. Svag" index="1"/>
+         <enum_value id="_0xda648" name="Trin 2. Normal 1." index="2"/>
+         <enum_value id="_0xda748" name="Trin 4. Høj" index="4"/>
+         <enum_value id="_0xda848" name="Trin 3. Normal høj" index="3"/>
+         <enum_value id="_0xda948" name="Panelstyret." index="5"/>
+      </enum_definition>
+      <enum_definition id="_0xdaa47" name="Ventilations styreform">
+         <enum_value id="_0xdab48" name="IHC Manuel"/>
+         <enum_value id="_0xdac48" name="IHC Automatisk" index="1"/>
+         <enum_value id="_0xdad48" name="Panelstyret." index="2"/>
+      </enum_definition>
+      <enum_definition id="_0xdae47" name="Ventilations temp.">
+         <enum_value id="_0xdaf48" name="24 gr."/>
+         <enum_value id="_0xdb048" name="22 gr." index="1"/>
+         <enum_value id="_0xdb148" name="20 gr." index="3"/>
+         <enum_value id="_0xdb248" name="18 gr." index="4"/>
+         <enum_value id="_0xdb348" name="16 gr." index="5"/>
+         <enum_value id="_0xdb448" name="21 gr." index="2"/>
+         <enum_value id="_0xdb548" name="----" index="6"/>
+      </enum_definition>
+      <enum_definition id="_0xdb647" name="Varmtvand">
+         <enum_value id="_0xdb748" name="Over temp."/>
+         <enum_value id="_0xdb848" name="På temp." index="1"/>
+         <enum_value id="_0xdb948" name="Under temp." index="2"/>
+      </enum_definition>
+      <enum_definition id="_0x16fd47" name="Tilstand for udgang">
+         <enum_value id="_0x16fe48" name="Følg - Som indgang"/>
+         <enum_value id="_0x16ff48" name="Invertering - modsat indgang" index="1"/>
+      </enum_definition>
+      <enum_definition id="_0x173247" name="Indgang aktiveret !">
+         <enum_value id="_0x173348" name="Indgang 1 - ON" index="1"/>
+         <enum_value id="_0x173448" name="Indgang 2 - ON" index="3"/>
+         <enum_value id="_0x173548" name="Indgang 3 - ON" index="5"/>
+         <enum_value id="_0x173648" name="Indgang 4 - ON" index="7"/>
+         <enum_value id="_0x173748" name="Indgang 5 - ON" index="9"/>
+         <enum_value id="_0x173848" name="Indgang 6 - ON" index="11"/>
+         <enum_value id="_0x173948" name="Indgang 7 - ON" index="13"/>
+         <enum_value id="_0x173a48" name="Indgang 8 - ON" index="15"/>
+         <enum_value id="_0x173b48" name="Indgang 9 - ON" index="17"/>
+         <enum_value id="_0x173c48" name="Indgang 10 - ON" index="19"/>
+         <enum_value id="_0x173d48" name="Ingen aktive"/>
+         <enum_value id="_0x173e48" name="Indgang 1 - OFF" index="2"/>
+         <enum_value id="_0x173f48" name="Indgang 2 - OFF" index="4"/>
+         <enum_value id="_0x174048" name="Indgang 3 - OFF" index="6"/>
+         <enum_value id="_0x174148" name="Indgang 4 - OFF" index="8"/>
+         <enum_value id="_0x174248" name="Indgang 5 - OFF" index="10"/>
+         <enum_value id="_0x174348" name="Indgang 6 - OFF" index="12"/>
+         <enum_value id="_0x174448" name="Indgang 7 - OFF" index="14"/>
+         <enum_value id="_0x174548" name="Indgang 8 - OFF" index="16"/>
+         <enum_value id="_0x174648" name="Indgang 9 - OFF" index="18"/>
+         <enum_value id="_0x174748" name="Indgang 10 - OFF" index="20"/>
+      </enum_definition>
+      <enum_definition id="_0x174847" name="Overskrivning">
+         <enum_value id="_0x174948" name="Ja"/>
+         <enum_value id="_0x174a48" name="Nej" index="1"/>
+      </enum_definition>
+      <enum_definition id="_0x174b47" name="Log">
+         <enum_value id="_0x174c48" name="ON"/>
+         <enum_value id="_0x174d48" name="OFF" index="1"/>
+         <enum_value id="_0x174e48" name="ON og OFF" index="2"/>
+      </enum_definition>
+      <enum_definition id="_0x1ddf47" name="procent">
+         <enum_value id="_0x1de048" name="0,0%"/>
+         <enum_value id="_0x1de148" name="0,1%" index="1"/>
+         <enum_value id="_0x1de248" name="0,2%" index="2"/>
+      </enum_definition>
+      <enum_definition id="_0x20af47" typeid="_0x10" name="Persienne tilstand">
+         <enum_value id="_0x20b048" typeid="_0x11" name="Ukendt"/>
+         <enum_value id="_0x20b148" typeid="_0x12" name="Oppe" index="1"/>
+         <enum_value id="_0x20b248" typeid="_0x13" name="Nede" index="2"/>
+         <enum_value id="_0x20b348" typeid="_0x14" name="Kører op" index="3"/>
+         <enum_value id="_0x20b448" typeid="_0x15" name="Kører ned" index="4"/>
+      </enum_definition>
+      <enum_definition id="_0x20b947" name="Tryk Betingelser">
+         <enum_value id="_0x20ba48" name="Tryk - Uafhængingt af tryktid"/>
+         <enum_value id="_0x20bb48" name="Langt tryk &gt; 0,7 sec" index="1"/>
+         <enum_value id="_0x20bc48" name="X-langt tryk &gt; 1 sec" index="2"/>
+         <enum_value id="_0x20bd48" name="X-langt tryk &gt; 2 sec" index="3"/>
+      </enum_definition>
+   </enum_definitions>
+   <groups id="_0x2031" name="Lokaliteter" icon="_0x15" note="Gruppering af produkter og funktionsblokke">
+      <group id="_0x2eb32" name="Stue/Alrum/Køkken" icon="_0x15">
+         <product_dataline id="_0x211753" product_identifier="_0x2202" name="Lampeudtag" locked="yes" icon="_0x86" position="Køkken">
+            <dataline_output id="_0x21185b" name="Udgang" backup="yes"/>
+            <scenes id="_0x211949" name="Scenarier" scene_resource="_0x21185b">
+               <scene_relay id="_0x211a4d" name="Scenarie link" link="_0x211b4b"/>
+            </scenes>
+         </product_dataline>
+         <product_dataline id="_0x211c53" product_identifier="_0x2202" name="Lampeudtag" locked="yes" icon="_0x86" position="Stue">
+            <dataline_output id="_0x211d5b" name="Udgang" backup="yes"/>
+            <scenes id="_0x211e49" name="Scenarier" scene_resource="_0x211d5b">
+               <scene_relay id="_0x211f4d" name="Scenarie link" link="_0x21204b"/>
+            </scenes>
+         </product_dataline>
+      </group>
+      <group id="_0x2ed32" name="Entré/Bryggers" icon="_0x15">
+         <product_dataline id="_0x9ea53" product_identifier="_0x2102" name="LK FUGA Tryk 4 tast" locked="yes" enduser_report="yes" icon="_0x85" note="Tryk med 4 SL">
+            <dataline_input id="_0x9eb5a" name="Tryk (øverst venstre)"/>
+            <dataline_input id="_0x9ec5a" name="Tryk (øverst højre)"/>
+            <dataline_input id="_0x9ed5a" name="Tryk (nederst venstre)"/>
+            <dataline_input id="_0x9ee5a" name="Tryk (nederst højre)">
+               <link_from_resource id="_0x21132d" name="Følg Link" icon="_0x47" link="_0x21142c"/>
+            </dataline_input>
+         </product_dataline>
+         <product_dataline id="_0x20b553" product_identifier="_0x2202" name="Lampeudtag" locked="yes" icon="_0x86" note="Loftsudtag i bryggers" position="I loftet, i bryggers">
+            <dataline_output id="_0x20b65b" name="Udgang" backup="yes"/>
+            <scenes id="_0x20b749" name="Scenarier" scene_resource="_0x20b65b">
+               <scene_relay id="_0x21154d" name="Scenarie link" link="_0x21164b"/>
+            </scenes>
+         </product_dataline>
+      </group>
+      <group id="_0x2ee32" name="Gang" icon="_0x15"/>
+      <group id="_0x2ea32" name="Soveværelse" icon="_0x15"/>
+      <group id="_0x2ef32" name="Værelse 1" icon="_0x15"/>
+      <group id="_0x2f032" name="Værelse 2" icon="_0x15"/>
+      <group id="_0x2f132" name="Bad 1" icon="_0x15">
+         <product_dataline id="_0x2f253" product_identifier="_0x21000007" name="Dimmer 350LR/600CR/1000LR" locked="yes" icon="_0x86" position="I loft" cabletype="3x1,5mm2 NOIKJ" cablenumber="1">
+            <dataline_output id="_0x2f35b" name="Touch" backup="yes"/>
+            <dataline_output id="_0x2f45b" name="Udgang for 230V" backup="yes"/>
+         </product_dataline>
+      </group>
+      <group id="_0x2ec32" name="Bad 2" icon="_0x15"/>
+      <group id="_0x2f632" name="Udelys" icon="_0x15"/>
+      <group id="_0x2f532" name="Drivhus" icon="_0x15">
+         <product_dataline id="_0xd6753" product_identifier="_0x2135" name="Fugt / Temperatur sensor" locked="yes" icon="_0x83" note="Sensor for fugt og temperatur">
+            <resource_humidity_level id="_0xd6827" name="Fugt" note="0-100% RH" inivalue="20.00" accessibility="read">
+               <link_from_resource id="_0x1f1b2d" name="Følg Link" icon="_0x47" link="_0x1f1c2c"/>
+            </resource_humidity_level>
+            <resource_temperature id="_0xd6914" name="Temperatur" note="Rumtemperatur" inivalue="20.00" accessibility="read"/>
+            <resource_temperature id="_0xd6a14" name="Dugpunkt" note="Beregnet værdi på baggrund af fugt og temperatur" inivalue="20.00" accessibility="read"/>
+            <resource_input id="_0xd6b11" name="Alarm" icon="_0x36" note="Høj ved fejl" accessibility="read"/>
+            <resource_temperature id="_0xd6c14" name="Kalibrering af temperaturføler" note="Offset fra målt temperatur" setting="yes"/>
+            <settings id="_0xd6d25" name="Indstillinger">
+               <dataline_input id="_0xd6e5a" name="Fugt / Temperatur sensor"/>
+            </settings>
+         </product_dataline>
+         <functionblock id="_0x204f28" name="Relative Fugtighed til udgang" master_name="Relative Fugtighed til udgang" master_programmer="mtkaa" master_date_year="2018" master_date_month="12" master_date_day="5" locked="yes" icon="_0x10" note="Den relative fugtighed konverters til en tid, som holder et udgang høj indtil den er kørt.&#xD;&#xA;">
+            <inputs id="_0x205023" name="Input" icon="_0x4" note="Variablene i denne gruppering er input til funktionsblokken">
+               <resource_humidity_level id="_0x205127" name="Fugtighed">
+                  <link_to_resource id="_0x1f1c2c" name="Følg Link" icon="_0x4a" link="_0x1f1b2d"/>
+               </resource_humidity_level>
+               <resource_input id="_0x205211" name="Indgang" icon="_0x36">
+                  <link_to_resource id="_0x20a62c" name="Følg Link" icon="_0x4a" link="_0x20a52d"/>
+               </resource_input>
+            </inputs>
+            <outputs id="_0x205324" name="Output" icon="_0x14" note="Variablene i denne gruppering er output fra funktionsblokken">
+               <resource_output id="_0x205412" name="Udgang" icon="_0x39">
+                  <link_from_resource id="_0x20a72d" name="Følg Link" icon="_0x47" link="_0x20a82c"/>
+               </resource_output>
+            </outputs>
+            <settings id="_0x205525" name="Indstillinger" icon="_0xd" note="Variablene i denne gruppering er indstillinger til funktionsblokken">
+               <resource_timer id="_0x205610" name="UdgangHøj" icon="_0x43" hour="0" minute="0" second="0" millisecond="10"/>
+               <resource_humidity_level id="_0x205727" name="Nøjagtighed" inivalue="1.00"/>
+               <resource_flag id="_0x20580a" name="Køre timeren ud" icon="_0x33" inivalue="on"/>
+            </settings>
+            <internalsettings id="_0x205929" name="Interne variable" icon="_0x13" note="Variablene i denne gruppe er private variable til funktionsblokken">
+               <resource_flag id="_0x205a0a" name="kørelse" icon="_0x33"/>
+               <resource_timer id="_0x205b10" name="Timer" icon="_0x43" hour="0" minute="0" second="0" millisecond="0"/>
+               <resource_humidity_level id="_0x205c27" name="Temp Fugtighed"/>
+            </internalsettings>
+            <programs id="_0x205d26" name="Programmer" icon="_0x19" note="Gruppering af funktionblokkens programmer">
+               <program_simple id="_0x205e1e" name="Sæt fugtighed" icon="_0x7">
+                  <events id="_0x205f64" name="Hændelser" icon="_0xb" note="Hændelser som starter program">
+                     <event id="_0x2060c8" name="%P bliver tilskrevet" icon="_0xc" note="Start program når %P bliver tilskrevet" link1="_0x205127" method="_0x9b"/>
+                     <event id="_0x2061c8" name="%P -&gt; ON" icon="_0xc" note="Start program når %P skifter til ON" link1="_0x205211" method="_0xa"/>
+                  </events>
+                  <actions id="_0x206266" name="Kommandoer" icon="_0x8" note="Gruppering af kommandoer som udføres når hændelse er indtruffet" type="_0x2">
+                     <program_sub id="_0x20631f" name="Sæt fugtighedsværdi" icon="_0x7">
+                        <conditions id="_0x206465" name="Betingelser" icon="_0x16" note="Gruppering af betingelser til logisk test">
+                           <condition id="_0x2065c9" name="%P = %S" icon="_0x1a" note="Betingelse at %P er samme som %S" link1="_0x205c27" link2="_0x206627" method="_0x1e">
+                              <resource_humidity_level id="_0x206627" name="Fugtighed"/>
+                           </condition>
+                           <condition id="_0x2067c9" name="%P = ON" icon="_0x1a" note="Betingelse at %P er ON" link1="_0x205211" method="_0xa"/>
+                        </conditions>
+                        <actions id="_0x206866" name="Kommandoer ved betingelser sande" icon="_0x8" note="Gruppering af kommandoer som udføres når betingelser er sande" type="_0x1">
+                           <action id="_0x2069ca" name="%P = %S" icon="_0x9" note="Sætter %P til samme værdi som %S" link1="_0x205c27" link2="_0x205127" method="_0x1e"/>
+                        </actions>
+                        <actions id="_0x206a66" name="Kommandoer ved betingelser falske" icon="_0x8" note="Gruppering af kommandoer som udføres når betingelser er falske"/>
+                     </program_sub>
+                     <program_sub id="_0x206b1f" name="Start timer" icon="_0x7">
+                        <conditions id="_0x206c65" name="Betingelser" icon="_0x16" note="Gruppering af betingelser til logisk test">
+                           <condition id="_0x206dc9" name="%P &gt; %S" icon="_0x1a" note="Betingelse at %P er større end %S" link1="_0x205b10" link2="_0x206e10" method="_0x32">
+                              <resource_timer id="_0x206e10" name="Timer" icon="_0x43" hour="0" minute="0" second="0" millisecond="0"/>
+                           </condition>
+                           <condition id="_0x206fc9" name="%P = %S" icon="_0x1a" note="Betingelse at %P er samme som %S" link1="_0x205c27" link2="_0x207027" method="_0x1e">
+                              <resource_humidity_level id="_0x207027" name="Fugtighed"/>
+                           </condition>
+                           <condition id="_0x2071c9" name="%P stoppet" icon="_0x1a" note="Betingelse at %P er stoppet" link1="_0x205b10" method="_0xdc"/>
+                        </conditions>
+                        <actions id="_0x207266" name="Kommandoer ved betingelser sande" icon="_0x8" note="Gruppering af kommandoer som udføres når betingelser er sande" type="_0x1">
+                           <action id="_0x2073ca" name="%P = ON" icon="_0x9" note="Sætter %P til ON" link1="_0x205a0a" method="_0xa"/>
+                           <action id="_0x2074ca" name="Aktiver nedtælling på %P" icon="_0x9" note="Aktiver nedtælling på %P" link1="_0x205b10" method="_0xd2"/>
+                        </actions>
+                        <actions id="_0x207566" name="Kommandoer ved betingelser falske" icon="_0x8" note="Gruppering af kommandoer som udføres når betingelser er falske"/>
+                     </program_sub>
+                  </actions>
+               </program_simple>
+               <program_simple id="_0x20761e" name="ON udgang" icon="_0x7">
+                  <events id="_0x207764" name="Hændelser" icon="_0xb" note="Hændelser som starter program">
+                     <event id="_0x2078c8" name="%P -&gt; ON" icon="_0xc" note="Start program når %P skifter til ON" link1="_0x205a0a" method="_0xa"/>
+                  </events>
+                  <actions id="_0x207966" name="Kommandoer" icon="_0x8" note="Gruppering af kommandoer som udføres når hændelse er indtruffet" type="_0x2">
+                     <action id="_0x207aca" name="%P = ON" icon="_0x9" note="Sætter %P til ON" link1="_0x205412" method="_0xa"/>
+                  </actions>
+               </program_simple>
+               <program_simple id="_0x207b1e" name="OFF udgang" icon="_0x7">
+                  <events id="_0x207c64" name="Hændelser" icon="_0xb" note="Hændelser som starter program">
+                     <event id="_0x207dc8" name="%P -&gt; OFF" icon="_0xc" note="Start program når %P skifter til OFF" link1="_0x205a0a" method="_0x14"/>
+                  </events>
+                  <actions id="_0x207e66" name="Kommandoer" icon="_0x8" note="Gruppering af kommandoer som udføres når hændelse er indtruffet" type="_0x2">
+                     <action id="_0x207fca" name="%P = OFF" icon="_0x9" note="Sætter %P til OFF" link1="_0x205412" method="_0x14"/>
+                  </actions>
+               </program_simple>
+               <program_simple id="_0x20801e" name="Ramt sende tid" icon="_0x7">
+                  <events id="_0x208164" name="Hændelser" icon="_0xb" note="Hændelser som starter program">
+                     <event id="_0x2082c8" name="%P -&gt; 0" icon="_0xc" note="Start program når %P skifter til 0" link1="_0x205b10" method="_0xa"/>
+                  </events>
+                  <actions id="_0x208366" name="Kommandoer" icon="_0x8" note="Gruppering af kommandoer som udføres når hændelse er indtruffet" type="_0x2">
+                     <action id="_0x2084ca" name="%P = OFF" icon="_0x9" note="Sætter %P til OFF" link1="_0x205a0a" method="_0x14"/>
+                     <action id="_0x2085ca" name="Stands tælling på %P" icon="_0x9" note="Standser evt. igangværende optælling eller nedtælling på %P" link1="_0x205b10" method="_0xdc"/>
+                  </actions>
+               </program_simple>
+               <program_simple id="_0x20861e" name="Sæt timer" icon="_0x7">
+                  <events id="_0x208764" name="Hændelser" icon="_0xb" note="Hændelser som starter program">
+                     <event id="_0x2088c8" name="%P bliver tilskrevet" icon="_0xc" note="Start program når %P bliver tilskrevet" link1="_0x205c27" method="_0x9b"/>
+                     <event id="_0x2089c8" name="%P bliver tilskrevet" icon="_0xc" note="Start program når %P bliver tilskrevet" link1="_0x205b10" method="_0x9b"/>
+                  </events>
+                  <actions id="_0x208a66" name="Kommandoer" icon="_0x8" note="Gruppering af kommandoer som udføres når hændelse er indtruffet" type="_0x2">
+                     <program_sub id="_0x208b1f" name="Læg til timer" icon="_0x7">
+                        <conditions id="_0x208c65" name="Betingelser" icon="_0x16" note="Gruppering af betingelser til logisk test">
+                           <condition id="_0x208dc9" name="%P &gt; %S" icon="_0x1a" note="Betingelse at %P er større end %S" link1="_0x205c27" link2="_0x208e27" method="_0x32">
+                              <resource_humidity_level id="_0x208e27" name="Fugtighed"/>
+                           </condition>
+                        </conditions>
+                        <actions id="_0x208f66" name="Kommandoer ved betingelser sande" icon="_0x8" note="Gruppering af kommandoer som udføres når betingelser er sande" type="_0x1">
+                           <action id="_0x2090ca" name="%P = %P + %S" icon="_0x9" note="Sætter %P til sin egen værdi plus %S" link1="_0x205b10" link2="_0x205610" method="_0x5a"/>
+                           <action id="_0x2091ca" name="%P = %P - %S" icon="_0x9" note="Sætter %P til sin egen værdi minus %S" link1="_0x205c27" link2="_0x205727" method="_0x64"/>
+                        </actions>
+                        <actions id="_0x209266" name="Kommandoer ved betingelser falske" icon="_0x8" note="Gruppering af kommandoer som udføres når betingelser er falske"/>
+                     </program_sub>
+                  </actions>
+               </program_simple>
+               <program_simple id="_0x20931e" name="Stop" icon="_0x7">
+                  <events id="_0x209464" name="Hændelser" icon="_0xb" note="Hændelser som starter program">
+                     <event id="_0x2095c8" name="%P -&gt; OFF" icon="_0xc" note="Start program når %P skifter til OFF" link1="_0x205211" method="_0x14"/>
+                  </events>
+                  <actions id="_0x209666" name="Kommandoer" icon="_0x8" note="Gruppering af kommandoer som udføres når hændelse er indtruffet" type="_0x2">
+                     <program_sub id="_0x20971f" name="Under program" icon="_0x7">
+                        <conditions id="_0x209865" name="Betingelser" icon="_0x16" note="Gruppering af betingelser til logisk test">
+                           <condition id="_0x2099c9" name="%P = OFF" icon="_0x1a" note="Betingelse at %P er OFF" link1="_0x20580a" method="_0x14"/>
+                        </conditions>
+                        <actions id="_0x209a66" name="Kommandoer ved betingelser sande" icon="_0x8" note="Gruppering af kommandoer som udføres når betingelser er sande" type="_0x1">
+                           <action id="_0x209bca" name="%P = %S" icon="_0x9" note="Sætter %P til samme værdi som %S" link1="_0x205c27" link2="_0x209c27" method="_0x1e">
+                              <resource_humidity_level id="_0x209c27" name="Fugtighed"/>
+                           </action>
+                           <action id="_0x209dca" name="%P = 0" icon="_0x9" note="Sætter %P til 0" link1="_0x205b10" method="_0xa"/>
+                           <action id="_0x209eca" name="Stands tælling på %P" icon="_0x9" note="Standser evt. igangværende optælling eller nedtælling på %P" link1="_0x205b10" method="_0xdc"/>
+                           <action id="_0x209fca" name="%P = OFF" icon="_0x9" note="Sætter %P til OFF" link1="_0x205a0a" method="_0x14"/>
+                        </actions>
+                        <actions id="_0x20a066" name="Kommandoer ved betingelser falske" icon="_0x8" note="Gruppering af kommandoer som udføres når betingelser er falske"/>
+                     </program_sub>
+                  </actions>
+               </program_simple>
+            </programs>
+         </functionblock>
+         <product_dataline id="_0x20a153" product_identifier="_0x2104" name="LK FUGA Tryk 2 tast 1 diode" locked="yes" enduser_report="yes" icon="_0x85" note="Kommunikation til LOGO! Styringen" position="Drivhuset">
+            <dataline_input id="_0x20a25a" name="Tryk (venstre)">
+               <link_from_resource id="_0x20a52d" name="Følg Link" icon="_0x47" link="_0x20a62c"/>
+            </dataline_input>
+            <dataline_input id="_0x20a35a" name="Tryk (højre)"/>
+            <dataline_output id="_0x20a45b" name="LED" backup="yes" type="led">
+               <link_to_resource id="_0x20a82c" name="Følg Link" icon="_0x4a" link="_0x20a72d"/>
+            </dataline_output>
+         </product_dataline>
+      </group>
+      <group id="_0x81a32" name="Scenarie" icon="_0x15">
+         <functionblock id="_0x20b828" name="Ud af huset" master_schneider_electric="yes" master_type="4.1.16" master_name="Fremkald Scenarie (Sluk alt)" master_programmer="Claus Jørgensen &#xD;&#xA;Lauritz Knudsen  &#xD;&#xA;Schneider Electric Danmark A/S" master_date_year="2012" master_date_month="3" master_date_day="2" locked="yes" icon="_0xe" note="4.1.16. Fremkald Scenarie (Sluk alt)&#xD;&#xA;&#xD;&#xA;Anvendes når der er brug for &quot;Sluk alt&quot; eller &quot;Blandede senarier&quot;&#xD;&#xA;&#xD;&#xA;For at se den fulde beskrivelse marker denne linje og tryk &quot;F1&quot;.&#xD;&#xA;Bemærk: Dette virker kun hvis &quot;Blokken&quot; er rød-markeret !">
+            <inputs id="_0x20be23" name="Input" icon="_0x4" note="Variablene i denne gruppering er input til funktionsblokken">
+               <resource_input id="_0x20bf11" name="Indgang for Senarie" icon="_0x36" note="Langt tryk &gt;0.7sek (Udfyldes af installatøren)&#xD;&#xA;Under &quot;Indstillinger&quot; og &quot;Tryk Betingelser&quot; kan du indstille hvor langt tid denne indgang skal være &quot;ON&quot; før blokken aktivers !">
+                  <link_to_resource id="_0x21142c" name="Følg Link" icon="_0x4a" link="_0x21132d"/>
+               </resource_input>
+            </inputs>
+            <outputs id="_0x20c024" name="Output" icon="_0x14" note="Variablene i denne gruppering er output fra funktionsblokken">
+               <resource_scene id="_0x20c14a" name="Scenarie Tænd/Sluk alt" note="Sættes til &quot;0%&quot; eller &quot;OFF&quot; for Sluk Alt&#xD;&#xA;og til 10-100% ved &quot;Tænd Alt&quot; eller &quot;Blandede senarier&quot;&#xD;&#xA;">
+                  <scene_link id="_0x21164b" name="Scenarie link" icon="_0x47" link="_0x21154d"/>
+                  <scene_link id="_0x211b4b" name="Scenarie link" icon="_0x47" link="_0x211a4d"/>
+                  <scene_link id="_0x21204b" name="Scenarie link" icon="_0x47" link="_0x211f4d"/>
+               </resource_scene>
+               <resource_output id="_0x20c212" name="Puls!" icon="_0x39" note="Bruges direkte til anden Blok f.eks. på 1.1.01.d &quot;Tænd&quot; eller &quot;Sluk&quot; &#xD;&#xA;eller direkte til en fortrådet Dimmer på &quot;Sluk&quot; eller &quot;Memory 1&quot; eller &quot;Memory 2&quot; (aldrig &quot;Touch&quot; da man ikke ved om produktet er tændt eller slukket !)"/>
+            </outputs>
+            <settings id="_0x20c325" name="Indstillinger" icon="_0xd" note="Variablene i denne gruppering er indstillinger til funktionsblokken">
+               <resource_enum id="_0x20c40f" name="Tryk Betingelser" typedef="_0x20b947" inivalue="_0x20bb48" backup="yes" icon="_0x22" note="Bestem hvornår denne blok skal aktivers!&#xD;&#xA;Tryk længten kan indstilles til :&#xD;&#xA;Tryk - Uafhænig af tid&#xD;&#xA;Langt tryk &gt;750ms &#xD;&#xA;X-langt tryk &gt;1sec&#xD;&#xA;X-langt tryk &gt;2sec&#xD;&#xA;"/>
+            </settings>
+            <internalsettings id="_0x20c529" name="Interne variable" icon="_0x13" note="Variablene i denne gruppe er private variable til funktionsblokken">
+               <resource_timer id="_0x20c610" name="One shot" icon="_0x43" hour="0" minute="0" second="0" millisecond="50"/>
+               <resource_timer id="_0x20c710" name="Timer for langt tryk" icon="_0x43" hour="0" minute="0" second="2" millisecond="0"/>
+            </internalsettings>
+            <programs id="_0x20c826" name="Programmer" icon="_0x19" note="Gruppering af funktionblokkens programmer">
+               <program_simple id="_0x20c91e" name="Program" icon="_0x7">
+                  <events id="_0x20ca64" name="Hændelser" icon="_0xb" note="Hændelser som starter program">
+                     <event_power id="_0x20cbc8" name="Powerup" icon="_0xc" note="Start program ved Powerup"/>
+                     <event id="_0x20ccc8" name="%P skifter tilstand" icon="_0xc" note="Start program når %P skifter tilstand" link1="_0x20c40f" method="_0x96"/>
+                  </events>
+                  <actions id="_0x20cd66" name="Kommandoer" icon="_0x8" note="Gruppering af kommandoer som udføres når hændelse er indtruffet" type="_0x2">
+                     <program_case id="_0x20ce21" name="Case (%LT)" icon="_0x7" note="Udfører case når %P er lig case værdien" link="_0x20c40f">
+                        <case_action id="_0x20cf66" name="Case" icon="_0x8" note="Udfører case når %P er lig case værdien" variable="_0x20c40f" value="_0x20d00f">
+                           <resource_enum id="_0x20d00f" typedef="_0x20b947" inivalue="_0x20ba48"/>
+                        </case_action>
+                        <case_action id="_0x20d166" name="Case" icon="_0x8" note="Udfører case når %P er lig case værdien" variable="_0x20c40f" value="_0x20d20f">
+                           <resource_enum id="_0x20d20f" typedef="_0x20b947" inivalue="_0x20bb48"/>
+                           <action id="_0x20d3ca" name="%P = %S" icon="_0x9" note="Sætter %P til samme værdi som %S" link1="_0x20c710" link2="_0x20d410" method="_0x1e">
+                              <resource_timer id="_0x20d410" name="Timer" icon="_0x43" hour="0" minute="0" second="0" millisecond="700"/>
+                           </action>
+                        </case_action>
+                        <case_action id="_0x20d566" name="Case" icon="_0x8" note="Udfører case når %P er lig case værdien" variable="_0x20c40f" value="_0x20d60f">
+                           <resource_enum id="_0x20d60f" typedef="_0x20b947" inivalue="_0x20bc48"/>
+                           <action id="_0x20d7ca" name="%P = %S" icon="_0x9" note="Sætter %P til samme værdi som %S" link1="_0x20c710" link2="_0x20d810" method="_0x1e">
+                              <resource_timer id="_0x20d810" name="Timer" icon="_0x43" hour="0" minute="0" second="1" millisecond="0"/>
+                           </action>
+                        </case_action>
+                        <case_action id="_0x20d966" name="Case" icon="_0x8" note="Udfører case når %P er lig case værdien" variable="_0x20c40f" value="_0x20da0f">
+                           <resource_enum id="_0x20da0f" typedef="_0x20b947" inivalue="_0x20bd48"/>
+                           <action id="_0x20dbca" name="%P = %S" icon="_0x9" note="Sætter %P til samme værdi som %S" link1="_0x20c710" link2="_0x20dc10" method="_0x1e">
+                              <resource_timer id="_0x20dc10" name="Timer" icon="_0x43" hour="0" minute="0" second="2" millisecond="0"/>
+                           </action>
+                        </case_action>
+                        <actions id="_0x20dd66" name="Udføres når ingen case er lig case værdien" icon="_0x8" note="Udføres når ingen case er lig case værdien" type="_0x1"/>
+                     </program_case>
+                  </actions>
+               </program_simple>
+               <program_simple id="_0x20de1e" name="Ind for sluk alt" icon="_0x7">
+                  <events id="_0x20df64" name="Hændelser" icon="_0xb" note="Hændelser som starter program">
+                     <event id="_0x20e0c8" name="%P bliver ændret" icon="_0xc" note="Start program når %P skifter værdi" link1="_0x20bf11" method="_0x96"/>
+                  </events>
+                  <actions id="_0x20e166" name="Kommandoer" icon="_0x8" note="Gruppering af kommandoer som udføres når hændelse er indtruffet" type="_0x2">
+                     <program_sub id="_0x20e21f" name="Under program" icon="_0x7">
+                        <conditions id="_0x20e365" name="Betingelser" icon="_0x16" note="Gruppering af betingelser til logisk test">
+                           <condition id="_0x20e4c9" name="%P = ON" icon="_0x1a" note="Betingelse at %P er ON" link1="_0x20bf11" method="_0xa"/>
+                        </conditions>
+                        <actions id="_0x20e566" name="Kommandoer ved betingelser sande" icon="_0x8" note="Gruppering af kommandoer som udføres når betingelser er sande" type="_0x1">
+                           <program_case id="_0x20e621" name="Case (%LT)" icon="_0x7" note="Udfører case når %P er lig case værdien" link="_0x20c40f">
+                              <case_action id="_0x20e766" name="Case" icon="_0x8" note="Udfører case når %P er lig case værdien" variable="_0x20c40f" value="_0x20e80f">
+                                 <resource_enum id="_0x20e80f" typedef="_0x20b947" inivalue="_0x20ba48"/>
+                                 <action id="_0x20e9ca" name="Fremkald %P" icon="_0x9" note="Aktiver scenarie" link1="_0x20c14a" method="_0xa"/>
+                                 <action id="_0x20eaca" name="%P = ON" icon="_0x9" note="Sætter %P til ON" link1="_0x20c212" method="_0xa"/>
+                              </case_action>
+                              <actions id="_0x20eb66" name="Udføres når ingen case er lig case værdien" icon="_0x8" note="Udføres når ingen case er lig case værdien" type="_0x1">
+                                 <action id="_0x20ecca" name="Aktiver nedtælling på %P" icon="_0x9" note="Aktiver nedtælling på %P" link1="_0x20c710" method="_0xd2"/>
+                              </actions>
+                           </program_case>
+                        </actions>
+                        <actions id="_0x20ed66" name="Kommandoer ved betingelser falske" icon="_0x8" note="Gruppering af kommandoer som udføres når betingelser er falske">
+                           <program_case id="_0x20ee21" name="Case (%LT)" icon="_0x7" note="Udfører case når %P er lig case værdien" link="_0x20c40f">
+                              <case_action id="_0x20ef66" name="Case" icon="_0x8" note="Udfører case når %P er lig case værdien" variable="_0x20c40f" value="_0x20f00f">
+                                 <resource_enum id="_0x20f00f" typedef="_0x20b947" inivalue="_0x20ba48"/>
+                              </case_action>
+                              <actions id="_0x20f166" name="Udføres når ingen case er lig case værdien" icon="_0x8" note="Udføres når ingen case er lig case værdien" type="_0x1">
+                                 <action id="_0x20f2ca" name="Stands tælling på %P" icon="_0x9" note="Standser evt. igangværende optælling eller nedtælling på %P" link1="_0x20c710" method="_0xdc"/>
+                                 <program_case id="_0x20f321" name="Case (%LT)" icon="_0x7" note="Udfører case når %P er lig case værdien" link="_0x20c40f">
+                                    <case_action id="_0x20f466" name="Case" icon="_0x8" note="Udfører case når %P er lig case værdien" variable="_0x20c40f" value="_0x20f50f">
+                                       <resource_enum id="_0x20f50f" typedef="_0x20b947" inivalue="_0x20ba48"/>
+                                    </case_action>
+                                    <case_action id="_0x20f666" name="Case" icon="_0x8" note="Udfører case når %P er lig case værdien" variable="_0x20c40f" value="_0x20f70f">
+                                       <resource_enum id="_0x20f70f" typedef="_0x20b947" inivalue="_0x20bb48"/>
+                                       <action id="_0x20f8ca" name="%P = %S" icon="_0x9" note="Sætter %P til samme værdi som %S" link1="_0x20c710" link2="_0x20f910" method="_0x1e">
+                                          <resource_timer id="_0x20f910" name="Timer" icon="_0x43" hour="0" minute="0" second="0" millisecond="700"/>
+                                       </action>
+                                    </case_action>
+                                    <case_action id="_0x20fa66" name="Case" icon="_0x8" note="Udfører case når %P er lig case værdien" variable="_0x20c40f" value="_0x20fb0f">
+                                       <resource_enum id="_0x20fb0f" typedef="_0x20b947" inivalue="_0x20bc48"/>
+                                       <action id="_0x20fcca" name="%P = %S" icon="_0x9" note="Sætter %P til samme værdi som %S" link1="_0x20c710" link2="_0x20fd10" method="_0x1e">
+                                          <resource_timer id="_0x20fd10" name="Timer" icon="_0x43" hour="0" minute="0" second="1" millisecond="0"/>
+                                       </action>
+                                    </case_action>
+                                    <case_action id="_0x20fe66" name="Case" icon="_0x8" note="Udfører case når %P er lig case værdien" variable="_0x20c40f" value="_0x20ff0f">
+                                       <resource_enum id="_0x20ff0f" typedef="_0x20b947" inivalue="_0x20bd48"/>
+                                       <action id="_0x2100ca" name="%P = %S" icon="_0x9" note="Sætter %P til samme værdi som %S" link1="_0x20c710" link2="_0x210110" method="_0x1e">
+                                          <resource_timer id="_0x210110" name="Timer" icon="_0x43" hour="0" minute="0" second="2" millisecond="0"/>
+                                       </action>
+                                    </case_action>
+                                    <actions id="_0x210266" name="Udføres når ingen case er lig case værdien" icon="_0x8" note="Udføres når ingen case er lig case værdien" type="_0x1"/>
+                                 </program_case>
+                              </actions>
+                           </program_case>
+                        </actions>
+                     </program_sub>
+                  </actions>
+               </program_simple>
+               <program_simple id="_0x21031e" name="timer &gt;0" icon="_0x7">
+                  <events id="_0x210464" name="Hændelser" icon="_0xb" note="Hændelser som starter program">
+                     <event id="_0x2105c8" name="%P -&gt; 0" icon="_0xc" note="Start program når %P skifter til 0" link1="_0x20c710" method="_0xa"/>
+                  </events>
+                  <actions id="_0x210666" name="Kommandoer" icon="_0x8" note="Gruppering af kommandoer som udføres når hændelse er indtruffet" type="_0x2">
+                     <action id="_0x2107ca" name="Fremkald %P" icon="_0x9" note="Aktiver scenarie" link1="_0x20c14a" method="_0xa"/>
+                     <action id="_0x2108ca" name="%P = ON" icon="_0x9" note="Sætter %P til ON" link1="_0x20c212" method="_0xa"/>
+                  </actions>
+               </program_simple>
+               <program_simple id="_0x21091e" name="Puls" icon="_0x7">
+                  <events id="_0x210a64" name="Hændelser" icon="_0xb" note="Hændelser som starter program">
+                     <event id="_0x210bc8" name="%P -&gt; ON" icon="_0xc" note="Start program når %P skifter til ON" link1="_0x20c212" method="_0xa"/>
+                  </events>
+                  <actions id="_0x210c66" name="Kommandoer" icon="_0x8" note="Gruppering af kommandoer som udføres når hændelse er indtruffet" type="_0x2">
+                     <action id="_0x210dca" name="Aktiver nedtælling på %P med initial værdi" icon="_0x9" note="Aktiver nedtælling på %P med initial værdi" link1="_0x20c610" method="_0xbe"/>
+                  </actions>
+               </program_simple>
+               <program_simple id="_0x210e1e" name="One shot &gt;0" icon="_0x7">
+                  <events id="_0x210f64" name="Hændelser" icon="_0xb" note="Hændelser som starter program">
+                     <event id="_0x2110c8" name="%P -&gt; 0" icon="_0xc" note="Start program når %P skifter til 0" link1="_0x20c610" method="_0xa"/>
+                  </events>
+                  <actions id="_0x211166" name="Kommandoer" icon="_0x8" note="Gruppering af kommandoer som udføres når hændelse er indtruffet" type="_0x2">
+                     <action id="_0x2112ca" name="%P = OFF" icon="_0x9" note="Sætter %P til OFF" link1="_0x20c212" method="_0x14"/>
+                  </actions>
+               </program_simple>
+            </programs>
+         </functionblock>
+      </group>
+   </groups>
+   <documentation_modules id="_0x4134">
+      <dataline_input_modules id="_0x4235"/>
+      <dataline_output_modules id="_0x4336"/>
+   </documentation_modules>
+</utcs_project>
