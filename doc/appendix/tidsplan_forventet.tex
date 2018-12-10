@@ -1,0 +1,97 @@
+\documentclass[12pt,a4paper,twoside,landscape]{article}
+    \special{papersize=210mm,297mm}
+    
+    \usepackage[a4paper,includeheadfoot,margin=2.54cm]{geometry}
+    \usepackage{pdflscape}
+    \usepackage{hyperref}
+    \usepackage{natbib}
+    \bibliographystyle{plainnat}
+
+    \usepackage[utf8]{inputenc}
+    \usepackage{graphicx}
+    \usepackage[danish]{babel}
+
+    \usepackage[familydefault,regular]{Chivo}
+    \usepackage[T1]{fontenc}
+
+    \usepackage{lastpage}
+    \usepackage{fancyhdr}
+    \usepackage{xcolor}
+    \usepackage{mathtools}
+    \usepackage{amsmath}
+    \usepackage{gensymb}
+    %Plotning af 
+    \usepackage{pgfplots}
+    \usepackage{pdfpages}
+    %\pgfplotset{width=10cm,compat=1.9}
+    \usepackage{multirow}     
+    %\usepackage{tabularx}
+    \usepackage{booktabs}% http://ctan.org/pkg/booktabs
+    \newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+    \newcommand{\todo}[1]{\textcolor{red}{TODO: #1}\PackageWarning{TODO:}{#1!}}
+                 
+    \pagestyle{fancy} 
+    \fancyhf{}
+    %\fancyhead[LE,RO]{Et kig på IBI i privaten}
+    %\fancyhead[RE,LO]{\rightmark}
+    \fancyfoot[CE,CO]{ }
+    \fancyfoot[LE,RO]{ }
+    \renewcommand{\headrulewidth}{0pt}
+    %\renewcommand{\footrulewidth}{1.5pt}
+ 
+    %% Ny 
+    \newcommand{\vdc}{V$_{\text{DC}}$ }
+    \newcommand{\vac}{V$_{\text{AC}}$ }
+    
+    \begin{document}
+
+
+\begin{tabular}[c]{|c||l|l|l|l|l|l|l||l|l|l|l|l|l|l||l|l|l|l|l|}
+    \hline
+            & \multicolumn{7}{c||}{Uge 48}
+            & \multicolumn{7}{|c||}{Uge 49}
+            & \multicolumn{5}{|c|}{Uge 50}\\
+            %\hline
+            \multirow[c]{-2}{*}{Opgaver}            
+            & \rotatebox[origin=c]{90}{ 26. november 2018 }% \rotatebox[origin=c]{90}{ Mandag }
+            & \rotatebox[origin=c]{90}{ 27. november 2018 }% \rotatebox[origin=c]{90}{ Tirsdag }
+            & \rotatebox[origin=c]{90}{ 28. november 2018 }% \rotatebox[origin=c]{90}{ Onsdag }
+            & \rotatebox[origin=c]{90}{ 29. november 2018 }% \rotatebox[origin=c]{90}{ Torsdag }
+            & \rotatebox[origin=c]{90}{ 30. november 2018 }% \rotatebox[origin=c]{90}{ Fredag }
+            & \rotatebox[origin=c]{90}{ 1. december 2018 }% \rotatebox[origin=c]{90}{ Lørdag }
+            & \rotatebox[origin=c]{90}{ 2. december 2018 }% \rotatebox[origin=c]{90}{ Søndag }
+            & \rotatebox[origin=c]{90}{ 3. december 2018 }% \rotatebox[origin=c]{90}{ Mandag }
+            & \rotatebox[origin=c]{90}{ 4. december 2018 }% \rotatebox[origin=c]{90}{ Tirsdag }
+            & \rotatebox[origin=c]{90}{ 5. december 2018 }% \rotatebox[origin=c]{90}{ Onsdag }
+            & \rotatebox[origin=c]{90}{ 6. december 2018 }% \rotatebox[origin=c]{90}{ Torsdag }
+            & \rotatebox[origin=c]{90}{ 7. december 2018 }% \rotatebox[origin=c]{90}{ Fredag }
+            & \rotatebox[origin=c]{90}{ 8. december 2018 }% \rotatebox[origin=c]{90}{ Lørdag }
+            & \rotatebox[origin=c]{90}{ 9. december 2018 }% \rotatebox[origin=c]{90}{ Søndag }
+            & \rotatebox[origin=c]{90}{ 10. december 2018 }% \rotatebox[origin=c]{90}{ Mandag }
+            & \rotatebox[origin=c]{90}{ 11. december 2018 }% \rotatebox[origin=c]{90}{ Tirsdag }
+            & \rotatebox[origin=c]{90}{ 12. december 2018 }% \rotatebox[origin=c]{90}{ Onsdag }
+            & \rotatebox[origin=c]{90}{ 13. december 2018 }% \rotatebox[origin=c]{90}{ Torsdag }
+            & \rotatebox[origin=c]{90}{ 14. december 2018 }% \rotatebox[origin=c]{90}{ Fredag } \\
+            \\ \hline
+            Problemformulering                  & x & x & & & & & & & & & & & & & & & & & \\ \hline
+            Tidsplan                            & x & & & & & & & & & & & & & & & & & & \\ \hline
+            Opbygning af drivhusstyring         & & & & x & x & & & & & & & & & & & & & & \\ \hline
+            Programmering af drivhusstyring     & & & & x & x & & & & & & & & & & & & & & \\ \hline
+            Dokumentering af drivhusstyring     & & & & & & & x & x & & & & & & & & & & & \\ \hline
+            Programmering af IHC                & & & & & & & & x & x & x & & & & & & & & & \\ \hline
+            Dokumentering af IHC                & & & & & & & x & x &   & & & & & & & & & & \\ \hline
+            Design af ventilationsanlæg         & & & & & & & & & & x & x & x & & & & & & & \\ \hline
+            Beregning af ventilationsanlæg      & & & & & & & & & & & & & & & & & & & \\ \hline
+            Dokumentering af ventilationsanlæg  & & & & & & & & & & & & & & & & & & & \\ \hline
+            Konklusion                          & & & & & & & & & & & & x & & & x & & & & \\ \hline
+            Udprintning og aflevering           & & & & & & & & & & & & & & & x & & & & \\ \hline
+            Forberedelse til fremlægning        & & & & & & & & & & & & & & & & x & x & & \\ \hline
+            Eksamen                             & & & & & & & & & & & & & & & & & & x & x \\ \hline
+            Møder / andet                       & & x & & & & & & & & & & & & & & & & & \\ \hline
+
+
+
+\end{tabular}
+
+\end{document}
