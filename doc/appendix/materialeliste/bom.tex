@@ -1,11 +1,89 @@
-\section{Materialeliste}
+\documentclass[12pt,a4paper,twoside,landscape]{article}
+    \special{papersize=210mm,297mm}
+    
+    \usepackage[a4paper,includeheadfoot,margin=2.54cm]{geometry}
+    \usepackage{pdflscape}
+    \usepackage{hyperref}
+    \usepackage{natbib}
+    \bibliographystyle{plainnat}
 
-Installation er delt op i to entreprise opgaver, så derfor også delt op i to betalinger.
+    \usepackage[utf8]{inputenc}
+    \usepackage{graphicx}
+    \usepackage[danish]{babel}
+
+    \usepackage[familydefault,regular]{Chivo}
+    \usepackage[T1]{fontenc}
+
+    \usepackage{lastpage}
+    \usepackage{fancyhdr}
+    \usepackage{xcolor}
+    \usepackage{mathtools}
+    \usepackage{amsmath}
+    \usepackage{gensymb}
+    %Plotning af 
+    \usepackage{pgfplots}
+    \usepackage{pdfpages}
+    %\pgfplotset{width=10cm,compat=1.9}
+    \usepackage{multirow}     
+    %\usepackage{tabularx}
+    \usepackage{booktabs}% http://ctan.org/pkg/booktabs
+    \newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+    \newcommand{\todo}[1]{\textcolor{red}{TODO: #1}\PackageWarning{TODO:}{#1!}}
+                 
+    \pagestyle{fancy} 
+    \fancyhf{}
+    %\fancyhead[LE,RO]{Et kig på IBI i privaten}
+    %\fancyhead[RE,LO]{\rightmark}
+    \fancyfoot[CE,CO]{ }
+    \fancyfoot[LE,RO]{ }
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+ 
+    %% Ny 
+    \newcommand{\vdc}{V$_{\text{DC}}$ }
+    \newcommand{\vac}{V$_{\text{AC}}$ }
+
+    %\title{Et kig på IBI i privaten}
+    
+    %\author{Michael Torp Kaalund \thanks{Mange tak til min læreplads Intego A/S}}
+    
+    \begin{document}
+
+
+\begin{tabular}[c]{|l|l|l|r|c|r|}
+    \hline
+    & Butik & Beskrivelse & Pris pr. stk. & Antal & Samlet pris \\
+    \hline \hline
+    \parbox[t]{2mm}{\multirow{7}{*}{\rotatebox[origin=c]{90}{Drivhus Styring}}}& Plantorama Randers & Eheim CompactOn 300 &  kr. 103,20 & 1 & kr. 103,20 \\
+    & Plantorama Randers & SF Akvarieslange Ø9/12 3 meter & kr. 35,96 & 1 & kr. 35,96 \\
+    & Lemvigh-Müller & Siemens LOGO! 12/24RCE & kr. 1048,38 & 1 & kr. 1048,38 \\
+    & Lemvigh-Müller & Siemens LOGO!Power 24V/2,5A &  kr. 547,03 & 1 & kr. 547,03 \\
+    & Lemvigh-Müller & Gennemgangsklemme WDU2,5 Grå & kr. 8,19 & 25 & kr. 204,75 \\
+    & Lemvigh-Müller & Gennemgangsklemme WDU2,5 Blå & kr. 8,19 & 5 & kr. 40,95 \\
+    & Lemvigh-Müller & Gennemgangsklemme WDU2,5 Gul & kr. 8,54 & 5 & 42,70 \\
+    \hline \hline
+    \parbox[t]{2mm}{\multirow{7}{*}{\rotatebox[origin=c]{90}{IBI installation}}}& Lemvigh-Müller & IHC strømforsyning 72W/24\vdc & kr. 1425,79 & 1 & kr. 1425,79 \\
+    & Lemvigh-Müller & IHC Visual Controller med viewer & kr. 6868,18 & 1 & kr. 6868,18 \\
+    & Lemvigh-Müller & IHC Udgangsmodul med 8 udgange relæ & kr. 1188,40 & 1 & kr. 1188,40 \\
+    & Lemvigh-Müller & IHC Udgangsmodul 400/8x10 & kr. 1584,49 & 1 & kr. 1584,49 \\
+    & Lemvigh-Müller & IHC Control Kabel LINK-10 (5x2x0,6) & kr. 11,09 & 100 & kr. 1109,00 \\
+    & Lemvigh-Müller & IHC W Fuga batteritryk 4SL Hvid & kr. 600,35 & & \\
+    & Lemvigh-Müller & IHC control fugt- og temperatursensor & kr. 777,57 & & \\
+
+    \hline \hline
+    &                 & Samlet pris ekls. moms &  & & kr. 2022,97 \\
+    &                 & Moms (25 \% ) & & & kr. 505,74 \\
+    &                 & Samlet pris inkl. moms & & & kr. 2528,71 \\
+                    \hline
+
+\end{tabular}
 
 %\begin{landscape}
     %\thispagestyle{landscapestyle}
     
-    \input{appendix/materialeliste/drivhus.tex}
-    \input{appendix/materialeliste/husinstallation.tex}
+    %\input{appendix/materialeliste/drivhus.tex}
+    %\input{appendix/materialeliste/husinstallation.tex}
 
 %\end{landscape}
+\end{document}
