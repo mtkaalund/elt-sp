@@ -24,7 +24,7 @@
     \usepackage{pgfplots}
     \usepackage{pdfpages}
     %\pgfplotset{width=10cm,compat=1.9}
-    %\usepackage{multirow}     
+    \usepackage{multirow}     
     %\usepackage{tabularx}
     \usepackage{booktabs}% http://ctan.org/pkg/booktabs
     \newcommand{\tabitem}{~~\llap{\textbullet}~~}
@@ -61,20 +61,32 @@
 
     \newpage
     \input{res/projektbeskrivelse/projektbeskrivelse.tex}   
+    %\include{res/projektbeskrivelse/projektbeskrivelse}
 
     \section{Implementering}
+    %    \include{implementering/drivhus/drivhus}
+    %    \include{implementering/lysinstallationen/lysinstallationen}
+    %    \include{implementering/Ventilation/ventilation}
         \input{implementering/drivhus/drivhus.tex}
         \input{implementering/lysinstallationen/lysinstallationen.tex}
         \input{implementering/Ventilation/ventilation.tex}
 
 %    \section{Perspetivering}
  
-    \section{Konklusion}
+%    \section{Konklusion}
+    \include{konklusion}
 
     \appendix
 
-    \input{appendix/tidsplan.tex}
-    \input{appendix/materialeliste/bom.tex}
+    \section{Tidsplan forventet} \label{sec:tidsplan_forventet}
+    \includegraphics[scale=0.72,angle=270,origin=c]{appendix/tidsplan_forventet.pdf}
+    %\newpage
+    \section{Tidsplan realiseret} \label{sec:tidsplan_realiseret}
+    \includegraphics[scale=0.72,angle=270,origin=c]{appendix/tidsplan_realiseret.pdf}
+    %\include{appendix/tidsplan.tex}
+    \section{Materialeliste}
+    \includegraphics[scale=0.72,angle=270,origin=c]{appendix/materialeliste/bom.pdf}
+    %\input{appendix/materialeliste/bom.tex}
     \input{appendix/siemens/logo.tex}
     \input{appendix/ventilation/ventilation.tex}
     \input{appendix/ibi/IBI.tex}
