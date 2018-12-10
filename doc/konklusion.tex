@@ -1,6 +1,19 @@
 \section{Konklusion}
+Drivhus styringen som er blevet implementeret viser, 
+at der kan findes en løsning med komponenter som ikke er beregnet til at kommuniker sammen.
+I dette tilfælde IHC fugt- og temperatur sensoren brugt inde i drivhus hvorefter dens værdi,
+bliver kommuniker videre til styringen. En bedre løsning ville være, at bruge en anden sensor
+som er designet til det høje luftigheds miljø. 
+\\ \\
+Grunden til, at vælge en intelligent bygningsinstallation er at øge ens comfort. 
+At få automatiseret blandt andet lyset efter funktionen af rummet, kører forceret drift på ventilationsanlægget
+når man ikke er hjemme. 
+Eller bruge en fugt sensor i på badværelset, hvis den relative fugt niveau kommer over de 30\% at ventilationsanlægget køre op i hastighed.
+Der bruges en IHC controller til lysstyringen, og der ønskes at ventilationsanlægget kan styres igennem IHC.
 
-\todo{Bla bla skriv noget omkring drivhus styringen}
+Det betyder, at i valgt af ventilationsanlægget skal der tages højde for at dens styring kan overstyres af en ekstern enhed.
+Ventilationsproducent Nilan har lavet en styring (CTS 602) som har en funktionsblok i IHC, 
+hvilket gøre det mere simple at få kommunikationen til at virke mellem de to styringer.
+I tilbuddet er der valgt et Nilan Comfort 600 med en CTS 602 styring, så integrationen i IHC styring er dokumenteret fra producentes side.
 
-\todo{bla bla skriv noget omkring ibi}
 

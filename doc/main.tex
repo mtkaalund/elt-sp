@@ -5,7 +5,6 @@
     \usepackage{pdflscape}
     \usepackage{hyperref}
     \usepackage{natbib}
-    \bibliographystyle{plainnat}
 
     \usepackage[utf8]{inputenc}
     \usepackage{graphicx}
@@ -59,8 +58,8 @@
 %    \newpage
     \tableofcontents
 
-    \newpage
-    \input{res/projektbeskrivelse/projektbeskrivelse.tex}   
+    %\newpage
+    
     %\include{res/projektbeskrivelse/projektbeskrivelse}
 
     \section{Implementering}
@@ -72,20 +71,22 @@
         \input{implementering/Ventilation/ventilation.tex}
 
 %    \section{Perspetivering}
- 
+  
 %    \section{Konklusion}
-    \include{konklusion}
+    \include{konklusion}%.tex}
 
     \appendix
-
+    \input{res/projektbeskrivelse/projektbeskrivelse.tex}   
     \section{Tidsplan forventet} \label{sec:tidsplan_forventet}
     \includegraphics[scale=0.72,angle=270,origin=c]{appendix/tidsplan_forventet.pdf}
     %\newpage
     \section{Tidsplan realiseret} \label{sec:tidsplan_realiseret}
     \includegraphics[scale=0.72,angle=270,origin=c]{appendix/tidsplan_realiseret.pdf}
     %\include{appendix/tidsplan.tex}
-    \section{Materialeliste}
-    \includegraphics[scale=0.72,angle=270,origin=c]{appendix/materialeliste/bom.pdf}
+    \section{Materialeliste} 
+    \includegraphics[scale=0.72,angle=270,origin=c]{appendix/materialeliste/bom_1.pdf}
+    \newpage
+    \includegraphics[scale=0.72,angle=270,origin=c]{appendix/materialeliste/bom_2.pdf}
     %\input{appendix/materialeliste/bom.tex}
     \input{appendix/siemens/logo.tex}
     \input{appendix/ventilation/ventilation.tex}
@@ -94,5 +95,8 @@
     %% Program list
     \input{appendix/programmer.tex}
     %% Litteratur listen
-    \bibliography{biblio}
+    %\addcontentsline{toc}{section}{Referancer}
+%    \bibliographystyle{plainnat}
+    %\bibliographystyle{unsrt} 
+    %\bibliography{biblio}
 \end{document}
